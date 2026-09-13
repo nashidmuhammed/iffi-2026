@@ -1,0 +1,94 @@
+Package Report
+
+-----------------------------------------------------------------------------
+Document:
+Name: 57 IFFI_02_05_2026_Final.ai
+Color Mode: RGB color
+Color Profile: none
+Ruler Units: millimeters
+Artboard Dimensions: 420 mm x 594 mm
+Show Images in Outline Mode: OFF
+Highlight Substituted Fonts: OFF
+Highlight Substituted Glyphs: OFF
+Preserve Text Editability
+Simulate Colored Paper: OFF
+
+-----------------------------------------------------------------------------
+Spot Color Objects:
+
+-----------------------------------------------------------------------------
+Missing Fonts:NONE
+
+-----------------------------------------------------------------------------
+Protected Fonts that were not packaged:
+Area Inktrap ExtraBold (Adobe Fonts)
+Area Inktrap Extrablack (Adobe Fonts)
+Area Inktrap Extended Extrablack (Adobe Fonts)
+
+-----------------------------------------------------------------------------
+Fonts:
+NONE
+
+-----------------------------------------------------------------------------
+Embedded Fonts:
+NONE
+
+-----------------------------------------------------------------------------
+Missing Links:
+NONE
+
+-----------------------------------------------------------------------------
+Linked Images:
+
+/Users/rohitparanjape/Downloads/ESG-Logo_Low-1024x724.png
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 2896K, 1024 by 724 pixels
+Dimensions: 94.837 by 67.052 points 
+Resolution: 777.422 by 777.422 pixels per inch
+
+
+/Users/rohitparanjape/Downloads/ESG-Logo_Low-1024x724.png
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 2896K, 1024 by 724 pixels
+Dimensions: 94.837 by 67.052 points 
+Resolution: 777.422 by 777.422 pixels per inch
+
+
+/Users/rohitparanjape/Downloads/ESG-Logo_Low-1024x724.png
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 2896K, 1024 by 724 pixels
+Dimensions: 94.837 by 67.052 points 
+Resolution: 777.422 by 777.422 pixels per inch
+
+
+/Users/rohitparanjape/Downloads/ESG-Logo_Low-1024x724.png
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 2896K, 1024 by 724 pixels
+Dimensions: 94.837 by 67.052 points 
+Resolution: 777.422 by 777.422 pixels per inch
+
+
+/Users/rohitparanjape/Downloads/ESG-Logo_Low-1024x724.png
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 2896K, 1024 by 724 pixels
+Dimensions: 94.837 by 67.052 points 
+Resolution: 777.422 by 777.422 pixels per inch
+
+
+/Users/rohitparanjape/Downloads/ESG-Logo_Low-1024x724.png
+Type: Transparent RGB
+Bits per Pixel: 32
+Channels: 4
+Size: 2896K, 1024 by 724 pixels
+Dimensions: 94.837 by 67.052 points 
+Resolution: 777.422 by 777.422 pixels per inch

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>57th IFFI 2026 | Event Portal Login</title>
+  <meta name="description" content="Official login portal for delegates, media, and filmmakers attending the 57th International Film Festival of India (IFFI 2026) in Goa.">
+  
+  <!-- CSS Frameworks & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom IFFI 2026 CSS -->
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       Site Header (Floating Responsive Nav Pill)
+       ========================================================================= -->
+  <header class="site-header" role="banner">
+    <div class="container d-flex justify-content-center">
+      <nav class="nav-container" aria-label="Official Partner Navigation">
+        
+        <!-- Partner & Government Logos -->
+        <ul class="logos-wrapper" role="list">
+          <li>
+            <a href="https://mib.gov.in" target="_blank" rel="noopener noreferrer" class="logo-link" title="Ministry of Information and Broadcasting">
+              <img src="assets/logos/MIB.png" alt="Ministry of Information and Broadcasting" class="logo-img">
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://www.goa.gov.in/" target="_blank" rel="noopener noreferrer" class="logo-link" title="Government of Goa">
+              <img src="assets/logos/GovtGoa.png" alt="Government of Goa" class="logo-img">
+            </a>
+          </li>
+          
+          <li class="d-none d-sm-block"><span class="logo-divider" aria-hidden="true"></span></li>
+
+          <li>
+            <a href="https://www.iffigoa.org" target="_blank" rel="noopener noreferrer" class="logo-link" title="57th International Film Festival of India 2026">
+              <img src="assets/logos/IFFI57.png" alt="57th IFFI Logo" class="logo-img highlight-logo">
+            </a>
+          </li>
+          
+          <li class="d-none d-sm-block"><span class="logo-divider" aria-hidden="true"></span></li>
+
+          <li>
+            <a href="https://pib.gov.in" target="_blank" rel="noopener noreferrer" class="logo-link" title="Press Information Bureau">
+              <img src="assets/logos/pib-logo.png" alt="Press Information Bureau" class="logo-img">
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://www.nfdcindia.com/" target="_blank" rel="noopener noreferrer" class="logo-link" title="National Film Development Corporation">
+              <img src="assets/logos/NFDC (blue)-ai.png" alt="NFDC Cinemas of India" class="logo-img">
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://esg.co.in/" target="_blank" rel="noopener noreferrer" class="logo-link" title="Entertainment Society of Goa">
+              <img src="assets/logos/esg.png" alt="Entertainment Society of Goa" class="logo-img">
+            </a>
+          </li>
+          
+          <li class="d-none d-md-block">
+            <a href="https://films.wavesbazaar.com/" target="_blank" rel="noopener noreferrer" class="logo-link" title="Film Bazaar">
+              <img src="assets/logos/footer-logo.png" alt="Film Bazaar" class="logo-img">
+            </a>
+          </li>
+        </ul>
+
+        <!-- Right Side Actions & Offcanvas Menu Trigger -->
+        <div class="header-actions">
+          <div class="nav-edition-badge">
+            <span class="badge-dot"></span> 57th IFFI 2026
+          </div>
+          
+          <button class="menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#iffiMenuOffcanvas" aria-controls="iffiMenuOffcanvas" aria-label="Open Navigation Menu">
+            <i class="bi bi-grid-3x3-gap-fill" aria-hidden="true"></i>
+            <span>MENU</span>
+          </button>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Main Section: Modern 2026 Master Login Card
+       ========================================================================= -->
+  <main class="main-content" id="main-content">
+    
+    <!-- Ambient Background Lighting -->
+    <div class="bg-ambient-graphics" aria-hidden="true">
+      <div class="ambient-circle-1"></div>
+      <div class="ambient-circle-2"></div>
+    </div>
+
+    <div class="login-container">
+      <div class="login-card-master">
+        
+        <!-- Left Column: Visual Brand Showcase -->
+        <section class="brand-showcase-panel" aria-label="57th IFFI 2026 Overview">
+          <div class="brand-showcase-content">
+            <div class="edition-tag">
+              <span class="spark-diamond"></span> 57th Edition • 2026
+            </div>
+            
+            <h1 class="showcase-title">57<sup>th</sup> International Film Festival of India</h1>
+            <div class="showcase-theme">Stories Without Borders</div>
+            
+            <p class="showcase-desc">
+              Welcome to the unified portal for delegates, filmmakers, media representatives, and cinema lovers attending Asia's premier film festival.
+            </p>
+          </div>
+
+          <!-- Event Meta Details Box -->
+          <div class="event-meta-box">
+            <div class="meta-item">
+              <div class="meta-icon" aria-hidden="true"><i class="bi bi-calendar3-event"></i></div>
+              <div class="meta-text">
+                <strong>20th – 28th November, 2026</strong>
+                <span>Official Festival Dates</span>
+              </div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-icon" aria-hidden="true"><i class="bi bi-geo-alt-fill"></i></div>
+              <div class="meta-text">
+                <strong>Panaji, Goa, India</strong>
+                <span>Entertainment Society of Goa (ESG)</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Right Column: Minimalist Login Form -->
+        <section class="form-panel" aria-label="Login Options">
+          
+          <div class="form-header">
+            <div class="form-header-badge">
+              <img src="assets/logos/IFFI57.png" alt="57th IFFI Emblem" class="brand-mini-logo">
+            </div>
+            <h2 class="form-title">Portal Sign In</h2>
+            <p class="form-subtitle">Access your media accreditations, delegate badges, and schedules.</p>
+          </div>
+
+          <!-- Tab Selection (OTP vs Password) -->
+          <div class="auth-tabs-nav" role="tablist" aria-label="Authentication Methods">
+            <button class="auth-tab-btn active" id="tab-otp-btn" role="tab" aria-selected="true" aria-controls="pane-otp-login" onclick="switchAuthTab('otp')">
+              <i class="bi bi-phone" aria-hidden="true"></i> Login with OTP
+            </button>
+            <button class="auth-tab-btn" id="tab-pwd-btn" role="tab" aria-selected="false" aria-controls="pane-pwd-login" onclick="switchAuthTab('password')">
+              <i class="bi bi-shield-lock" aria-hidden="true"></i> Password
+            </button>
+          </div>
+
+          <!-- OTP Login Form -->
+          <div id="pane-otp-login" role="tabpanel" aria-labelledby="tab-otp-btn">
+            <form id="form-otp" onsubmit="handleSendOTP(event)">
+              <div class="form-group-custom">
+                <label for="otp-identifier" class="form-label-custom">Registered Email / Mobile Number</label>
+                <div class="input-wrapper">
+                  <i class="bi bi-envelope-at input-icon-prefix" aria-hidden="true"></i>
+                  <input type="text" id="otp-identifier" class="input-control-custom" placeholder="name@example.com or +91..." autocomplete="username" required>
+                </div>
+              </div>
+
+              <button type="submit" id="btn-request-otp" class="btn-primary-action">
+                <span id="btn-otp-text">Get Login OTP</span>
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </button>
+            </form>
+
+            <!-- OTP Verification Code Entry (Shown after request) -->
+            <div class="otp-verification-box" id="otp-verification-container">
+              <p class="mb-2 fw-semibold text-dark" style="font-size: 0.9rem;">
+                <i class="bi bi-shield-check text-success me-1"></i> OTP Sent Successfully
+              </p>
+              <p class="text-muted small mb-3">Enter the 6-digit verification code sent to your contact.</p>
+              
+              <div class="otp-digit-inputs">
+                <input type="text" maxlength="1" class="otp-digit" inputmode="numeric" pattern="[0-9]*" aria-label="Digit 1" onkeyup="handleOtpInput(event, 0)" autofocus>
+                <input type="text" maxlength="1" class="otp-digit" inputmode="numeric" pattern="[0-9]*" aria-label="Digit 2" onkeyup="handleOtpInput(event, 1)">
+                <input type="text" maxlength="1" class="otp-digit" inputmode="numeric" pattern="[0-9]*" aria-label="Digit 3" onkeyup="handleOtpInput(event, 2)">
+                <input type="text" maxlength="1" class="otp-digit" inputmode="numeric" pattern="[0-9]*" aria-label="Digit 4" onkeyup="handleOtpInput(event, 3)">
+                <input type="text" maxlength="1" class="otp-digit" inputmode="numeric" pattern="[0-9]*" aria-label="Digit 5" onkeyup="handleOtpInput(event, 4)">
+                <input type="text" maxlength="1" class="otp-digit" inputmode="numeric" pattern="[0-9]*" aria-label="Digit 6" onkeyup="handleOtpInput(event, 5)">
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="resend-timer-text" id="resend-timer-display">Resend in <span id="countdown">00:45</span></span>
+                <a href="javascript:void(0)" class="resend-timer-text text-decoration-none" id="resend-action-link" onclick="handleResendOTP()" style="display: none;">Resend Code</a>
+              </div>
+
+              <button type="button" class="btn-primary-action" onclick="handleVerifyOTP()">
+                <span>Verify & Login</span>
+                <i class="bi bi-check2-circle" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Password Login Form -->
+          <div id="pane-pwd-login" role="tabpanel" aria-labelledby="tab-pwd-btn" style="display: none;">
+            <form id="form-password" onsubmit="handlePasswordLogin(event)">
+              
+              <div class="form-group-custom">
+                <label for="pwd-username" class="form-label-custom">User Name / Email</label>
+                <div class="input-wrapper">
+                  <i class="bi bi-person input-icon-prefix" aria-hidden="true"></i>
+                  <input type="text" id="pwd-username" class="input-control-custom" placeholder="Enter your username or email" autocomplete="username" required>
+                </div>
+              </div>
+
+              <div class="form-group-custom">
+                <label for="pwd-password" class="form-label-custom">Password</label>
+                <div class="input-wrapper">
+                  <i class="bi bi-lock input-icon-prefix" aria-hidden="true"></i>
+                  <input type="password" id="pwd-password" class="input-control-custom" placeholder="Enter your password" autocomplete="current-password" required>
+                  <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('pwd-password', this)" aria-label="Toggle password visibility">
+                    <i class="bi bi-eye" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-options-row">
+                <label class="custom-checkbox-label">
+                  <input type="checkbox" id="remember-device">
+                  <span>Remember this device</span>
+                </label>
+                <a href="#forgot" class="forgot-link" onclick="alert('Forgot Password / Username recovery instructions will be sent to your registered email.')">Forgot password?</a>
+              </div>
+
+              <button type="submit" class="btn-primary-action">
+                <span>Sign In</span>
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Extra Registration & Help Links -->
+          <div class="form-footer-nav">
+            <p class="register-prompt">
+              New to IFFI 2026? <a href="#register" onclick="alert('Redirecting to 57th IFFI Delegate & Media Registration portal.')">Create User Account</a>
+            </p>
+            <a href="https://www.iffigoa.org" target="_blank" rel="noopener noreferrer" class="back-home-link">
+              <i class="bi bi-arrow-left" aria-hidden="true"></i> Return to Official Portal
+            </a>
+          </div>
+
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       Site Footer
+       ========================================================================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p class="mb-1 fw-semibold text-dark">
+        &copy; 2026 57<sup>th</sup> International Film Festival of India (IFFI)
+      </p>
+      <p class="small text-muted mb-2">
+        Ministry of Information & Broadcasting, Government of India & Entertainment Society of Goa
+      </p>
+      <ul class="footer-links" role="list">
+        <li><a href="#privacy" onclick="alert('57th IFFI Privacy Policy')">Privacy Policy</a></li>
+        <li><span class="text-muted" aria-hidden="true">•</span></li>
+        <li><a href="#terms" onclick="alert('57th IFFI Terms and Conditions')">Terms & Conditions</a></li>
+        <li><span class="text-muted" aria-hidden="true">•</span></li>
+        <li><a href="#delegate-guide" onclick="alert('Delegate Guide & Accreditation')">Delegate Guidelines</a></li>
+        <li><span class="text-muted" aria-hidden="true">•</span></li>
+        <li><a href="#contact" onclick="alert('Helpdesk: contact@iffigoa.org')">Support / Helpdesk</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       Offcanvas Menu Drawer
+       ========================================================================= -->
+  <div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="iffiMenuOffcanvas" aria-labelledby="iffiMenuOffcanvasLabel">
+    <div class="offcanvas-header offcanvas-header-custom">
+      <div class="d-flex align-items-center gap-2">
+        <img src="assets/logos/IFFI57.png" alt="57th IFFI Logo" style="height: 32px;">
+        <h5 class="offcanvas-title fw-bold text-dark mb-0" id="iffiMenuOffcanvasLabel">57th IFFI 2026</h5>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+      <ul class="offcanvas-nav-list">
+        <li class="offcanvas-nav-item">
+          <a href="https://www.iffigoa.org" target="_blank"><i class="bi bi-house-door"></i> Festival Home</a>
+        </li>
+        <li class="offcanvas-nav-item">
+          <a href="#about" onclick="alert('57th IFFI Theme: Stories Without Borders')"><i class="bi bi-film"></i> About 57th IFFI Goa</a>
+        </li>
+        <li class="offcanvas-nav-item">
+          <a href="#screenings"><i class="bi bi-camera-reels"></i> Screenings & Schedule</a>
+        </li>
+        <li class="offcanvas-nav-item">
+          <a href="#media"><i class="bi bi-newspaper"></i> Media Accreditation</a>
+        </li>
+        <li class="offcanvas-nav-item">
+          <a href="#film-bazaar"><i class="bi bi-briefcase"></i> Waves / Film Bazaar</a>
+        </li>
+        <li class="offcanvas-nav-item">
+          <a href="#venue"><i class="bi bi-geo-alt"></i> Venue & Festival Map</a>
+        </li>
+        <li class="offcanvas-nav-item">
+          <a href="#contact"><i class="bi bi-telephone"></i> PIB Media Desk & Help</a>
+        </li>
+      </ul>
+      <div class="p-4 border-top mt-3 bg-light">
+        <div class="d-flex align-items-center gap-3">
+          <img src="assets/logos/GovtGoa.png" alt="Govt Goa" style="height: 28px;">
+          <img src="assets/logos/MIB.png" alt="MIB" style="height: 28px;">
+          <img src="assets/logos/pib-logo.png" alt="PIB" style="height: 28px;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Tab switcher between OTP and Password
+    function switchAuthTab(type) {
+      const otpBtn = document.getElementById('tab-otp-btn');
+      const pwdBtn = document.getElementById('tab-pwd-btn');
+      const otpPane = document.getElementById('pane-otp-login');
+      const pwdPane = document.getElementById('pane-pwd-login');
+
+      if (type === 'otp') {
+        otpBtn.classList.add('active');
+        otpBtn.setAttribute('aria-selected', 'true');
+        pwdBtn.classList.remove('active');
+        pwdBtn.setAttribute('aria-selected', 'false');
+        
+        otpPane.style.display = 'block';
+        pwdPane.style.display = 'none';
+      } else {
+        pwdBtn.classList.add('active');
+        pwdBtn.setAttribute('aria-selected', 'true');
+        otpBtn.classList.remove('active');
+        otpBtn.setAttribute('aria-selected', 'false');
+        
+        pwdPane.style.display = 'block';
+        otpPane.style.display = 'none';
+      }
+    }
+
+    // Toggle Password visibility
+    function togglePasswordVisibility(inputId, btn) {
+      const input = document.getElementById(inputId);
+      const icon = btn.querySelector('i');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.className = 'bi bi-eye-slash';
+        btn.setAttribute('aria-label', 'Hide password');
+      } else {
+        input.type = 'password';
+        icon.className = 'bi bi-eye';
+        btn.setAttribute('aria-label', 'Show password');
+      }
+    }
+
+    // OTP Flow Simulation
+    let timerInterval = null;
+    function handleSendOTP(event) {
+      event.preventDefault();
+      const identifier = document.getElementById('otp-identifier').value.trim();
+      if (!identifier) return;
+
+      const btn = document.getElementById('btn-request-otp');
+      const btnText = document.getElementById('btn-otp-text');
+      btn.disabled = true;
+      btnText.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Sending OTP...';
+
+      setTimeout(() => {
+        btn.disabled = false;
+        btnText.innerHTML = 'Get Login OTP';
+        const otpContainer = document.getElementById('otp-verification-container');
+        otpContainer.classList.add('active');
+        
+        // Focus first OTP input
+        const firstDigit = otpContainer.querySelector('.otp-digit');
+        if (firstDigit) firstDigit.focus();
+        
+        startOtpCountdown();
+      }, 700);
+    }
+
+    function startOtpCountdown() {
+      let seconds = 45;
+      const countdownEl = document.getElementById('countdown');
+      const resendDisplay = document.getElementById('resend-timer-display');
+      const resendAction = document.getElementById('resend-action-link');
+      
+      resendDisplay.style.display = 'inline';
+      resendAction.style.display = 'none';
+      
+      if (timerInterval) clearInterval(timerInterval);
+      
+      timerInterval = setInterval(() => {
+        seconds--;
+        const formatted = seconds < 10 ? '00:0' + seconds : '00:' + seconds;
+        countdownEl.textContent = formatted;
+        
+        if (seconds <= 0) {
+          clearInterval(timerInterval);
+          resendDisplay.style.display = 'none';
+          resendAction.style.display = 'inline';
+        }
+      }, 1000);
+    }
+
+    function handleResendOTP() {
+      alert('A new OTP has been sent to your registered contact.');
+      startOtpCountdown();
+    }
+
+    // Auto-advance OTP Inputs
+    function handleOtpInput(e, index) {
+      const inputs = document.querySelectorAll('.otp-digit');
+      if (e.key === 'Backspace' && !inputs[index].value && index > 0) {
+        inputs[index - 1].focus();
+      } else if (inputs[index].value && index < inputs.length - 1) {
+        inputs[index + 1].focus();
+      }
+    }
+
+    function handleVerifyOTP() {
+      const inputs = document.querySelectorAll('.otp-digit');
+      let otp = '';
+      inputs.forEach(input => otp += input.value);
+      if (otp.length < 6) {
+        alert('Please enter all 6 digits of the verification code.');
+        return;
+      }
+      alert('Login successful! Welcome to the 57th IFFI 2026 Portal.');
+    }
+
+    function handlePasswordLogin(event) {
+      event.preventDefault();
+      const user = document.getElementById('pwd-username').value.trim();
+      const pass = document.getElementById('pwd-password').value.trim();
+      if (!user || !pass) return;
+      alert(`Welcome back, ${user}! Signing into 57th IFFI 2026 portal.`);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Accreditation Application | 57th IFFI 2026 Goa</title>
+  <meta name="description" content="Official Press Information Bureau (PIB) media accreditation portal for the 57th International Film Festival of India (IFFI 2026) in Goa.">
+  
+  <!-- CSS Frameworks & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Choices.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+  
+  <!-- Custom 57th IFFI 2026 Styles -->
+  <link rel="stylesheet" href="css/media_registration.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       Site Header (Floating Responsive Nav Pill)
+       ========================================================================= -->
+  <header class="site-header" role="banner">
+    <div class="container d-flex justify-content-center">
+      <nav class="nav-container" aria-label="Official Partner Navigation">
+        
+        <!-- Partner & Government Logos -->
+        <ul class="logos-wrapper" role="list">
+          <li>
+            <a href="https://mib.gov.in" target="_blank" rel="noopener noreferrer" class="logo-link" title="Ministry of Information and Broadcasting">
+              <img src="assets/logos/MIB.png" alt="Ministry of Information and Broadcasting" class="logo-img">
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://www.goa.gov.in/" target="_blank" rel="noopener noreferrer" class="logo-link" title="Government of Goa">
+              <img src="assets/logos/GovtGoa.png" alt="Government of Goa" class="logo-img">
+            </a>
+          </li>
+          
+          <li class="d-none d-sm-block"><span class="logo-divider" aria-hidden="true"></span></li>
+
+          <li>
+            <a href="https://www.iffigoa.org" target="_blank" rel="noopener noreferrer" class="logo-link" title="57th International Film Festival of India 2026">
+              <img src="assets/logos/IFFI57.png" alt="57th IFFI Logo" class="logo-img highlight-logo">
+            </a>
+          </li>
+          
+          <li class="d-none d-sm-block"><span class="logo-divider" aria-hidden="true"></span></li>
+
+          <li>
+            <a href="https://pib.gov.in" target="_blank" rel="noopener noreferrer" class="logo-link" title="Press Information Bureau">
+              <img src="assets/logos/pib-logo.png" alt="Press Information Bureau" class="logo-img">
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://www.nfdcindia.com/" target="_blank" rel="noopener noreferrer" class="logo-link" title="National Film Development Corporation">
+              <img src="assets/logos/NFDC (blue)-ai.png" alt="NFDC Cinemas of India" class="logo-img">
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://esg.co.in/" target="_blank" rel="noopener noreferrer" class="logo-link" title="Entertainment Society of Goa">
+              <img src="assets/logos/esg.png" alt="Entertainment Society of Goa" class="logo-img">
+            </a>
+          </li>
+          
+          <li class="d-none d-md-block">
+            <a href="https://films.wavesbazaar.com/" target="_blank" rel="noopener noreferrer" class="logo-link" title="Film Bazaar">
+              <img src="assets/logos/footer-logo.png" alt="Film Bazaar" class="logo-img">
+            </a>
+          </li>
+        </ul>
+
+        <!-- Right Side Actions & Offcanvas Menu Trigger -->
+        <div class="header-actions">
+          <div class="nav-edition-badge">
+            <span class="badge-dot"></span> 57th IFFI 2026
+          </div>
+          
+          <button class="menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#iffiMenuOffcanvas" aria-controls="iffiMenuOffcanvas" aria-label="Open Navigation Menu">
+            <i class="bi bi-grid-3x3-gap-fill" aria-hidden="true"></i>
+            <span>MENU</span>
+          </button>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Main Section: Media Registration Form
+       ========================================================================= -->
+  <main class="registration-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-10 col-lg-11">
+          
+          <div class="registration-card">
+            
+            <!-- Card Header Banner -->
+            <div class="reg-card-header">
+              <div class="reg-header-badge">
+                <span class="spark-diamond"></span> 57th Edition • Press Information Bureau
+              </div>
+              <h1 class="reg-main-title">MEDIA ACCREDITATION APPLICATION</h1>
+              <div class="reg-sub-title">57th International Film Festival of India (IFFI 2026)</div>
+              <p class="reg-desc">
+                Online registration for Indian and International media delegates, journalists, photojournalists, correspondents, and film critics covering IFFI 2026 in Panaji, Goa (20th – 28th November, 2026).
+              </p>
+            </div>
+
+            <!-- Card Body Form -->
+            <div class="reg-card-body">
+              <form id="mediaRegForm" onsubmit="handleRegistrationSubmit(event)">
+                
+                <!-- -------------------------------------------------------------
+                     Section 1: Personal & Professional Details
+                     ------------------------------------------------------------- -->
+                <div class="section-divider-custom">
+                  <span><i class="bi bi-person-vcard"></i> Personal & Professional Details</span>
+                </div>
+
+                <div class="row g-4">
+                  <!-- Name of Applicant with Title -->
+                  <div class="col-md-6">
+                    <label for="applicant-name" class="form-label-custom">
+                      Name of Applicant <span class="required-star">*</span>
+                    </label>
+                    <div class="input-group-custom">
+                      <select class="form-select-custom" style="max-width: 90px; border-radius: var(--radius-md) 0 0 var(--radius-md); border-right: none;" aria-label="Title" id="applicant-title" required>
+                        <option value="Mr">Mr.</option>
+                        <option value="Ms">Ms.</option>
+                        <option value="Mrs">Mrs.</option>
+                        <option value="Dr">Dr.</option>
+                      </select>
+                      <input type="text" id="applicant-name" class="form-control-custom" placeholder="Enter your full name" autocomplete="name" required>
+                    </div>
+                  </div>
+
+                  <!-- Organisation Name -->
+                  <div class="col-md-6">
+                    <label for="org-name" class="form-label-custom">
+                      Name of Media Organisation / Outlet <span class="required-star">*</span>
+                    </label>
+                    <div class="input-group-custom">
+                      <span class="input-group-text-custom"><i class="bi bi-building"></i></span>
+                      <input type="text" id="org-name" class="form-control-custom" placeholder="e.g. The Times, Reuters, Film Companion" autocomplete="organization" required>
+                    </div>
+                  </div>
+
+                  <!-- Designation -->
+                  <div class="col-md-6">
+                    <label for="designation" class="form-label-custom">
+                      Designation / Role <span class="required-star">*</span>
+                    </label>
+                    <div class="input-group-custom">
+                      <span class="input-group-text-custom"><i class="bi bi-briefcase"></i></span>
+                      <input type="text" id="designation" class="form-control-custom" placeholder="e.g. Senior Film Correspondent, Staff Reporter" required>
+                    </div>
+                  </div>
+
+                  <!-- Category -->
+                  <div class="col-md-6">
+                    <label for="media-category" class="form-label-custom">
+                      Accreditation Category <span class="required-star">*</span>
+                    </label>
+                    <div class="input-group-custom">
+                      <span class="input-group-text-custom"><i class="bi bi-tag"></i></span>
+                      <select id="media-category" class="form-select-custom" required>
+                        <option value="" selected disabled>Select your media category</option>
+                        <option value="Correspondent (without equipment)">Correspondent / Reporter (without equipment)</option>
+                        <option value="Correspondent (with equipment)">Correspondent / Cameraperson (with equipment)</option>
+                        <option value="Photographer / Photojournalist">Photographer / Photojournalist</option>
+                        <option value="Videographer / Television Crew">Videographer / Television Crew</option>
+                        <option value="Digital & Online Media / Podcaster">Digital & Online Media / Podcaster</option>
+                        <option value="Freelance Film Critic / Columnist">Freelance Film Critic / Columnist</option>
+                        <option value="Official Broadcaster">Official Broadcaster / Agency</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Mobile / WhatsApp Number with Country Code -->
+                  <div class="col-md-6">
+                    <label for="mobile-number" class="form-label-custom">
+                      Mobile Number / WhatsApp <span class="required-star">*</span>
+                    </label>
+                    <div class="input-group-custom">
+                      <select class="country-code-select" id="country-code-primary" aria-label="Primary Country Code">
+                        <option value="+91" selected>India (+91)</option>
+                      </select>
+                      <input type="tel" id="mobile-number" class="form-control-custom" placeholder="98765 43210" autocomplete="tel" required>
+                    </div>
+                  </div>
+
+                  <!-- Alternative Mobile Number -->
+                  <div class="col-md-6">
+                    <label for="alt-mobile-number" class="form-label-custom">
+                      Alternative Contact Number
+                    </label>
+                    <div class="input-group-custom">
+                      <select class="country-code-select" id="country-code-alt" aria-label="Alternative Country Code">
+                        <option value="+91" selected>India (+91)</option>
+                      </select>
+                      <input type="tel" id="alt-mobile-number" class="form-control-custom" placeholder="Optional contact number">
+                    </div>
+                  </div>
+
+                  <!-- Email Address -->
+                  <div class="col-12">
+                    <label for="email-address" class="form-label-custom">
+                      Official / Personal Email ID <span class="required-star">*</span>
+                    </label>
+                    <div class="input-group-custom">
+                      <span class="input-group-text-custom"><i class="bi bi-envelope"></i></span>
+                      <input type="email" id="email-address" class="form-control-custom" placeholder="journalist@organisation.com" autocomplete="email" required>
+                    </div>
+                  </div>
+
+                  <!-- Country -->
+                  <div class="col-md-4">
+                    <label for="address-country" class="form-label-custom">
+                      Country <span class="required-star">*</span>
+                    </label>
+                    <div class="input-group-custom">
+                      <span class="input-group-text-custom"><i class="bi bi-globe"></i></span>
+                      <input type="text" id="address-country" class="form-control-custom" placeholder="e.g. India, France, USA" autocomplete="country-name" required>
+                    </div>
+                  </div>
+
+                  <!-- State -->
+                  <div class="col-md-4">
+                    <label for="address-state" class="form-label-custom">
+                      State / Province <span class="required-star">*</span>
+                    </label>
+                    <div class="input-group-custom">
+                      <span class="input-group-text-custom"><i class="bi bi-map"></i></span>
+                      <input type="text" id="address-state" class="form-control-custom" placeholder="State" required>
+                    </div>
+                  </div>
+
+                  <!-- City -->
+                  <div class="col-md-4">
+                    <label for="address-city" class="form-label-custom">
+                      City <span class="required-star">*</span>
+                    </label>
+                    <div class="input-group-custom">
+                      <span class="input-group-text-custom"><i class="bi bi-geo-alt"></i></span>
+                      <input type="text" id="address-city" class="form-control-custom" placeholder="City" autocomplete="address-level2" required>
+                    </div>
+                  </div>
+
+                  <!-- Address -->
+                  <div class="col-md-8">
+                    <label for="address-street" class="form-label-custom">
+                      Complete Postal Address <span class="required-star">*</span>
+                    </label>
+                    <div class="input-group-custom">
+                      <span class="input-group-text-custom"><i class="bi bi-house-door"></i></span>
+                      <input type="text" id="address-street" class="form-control-custom" placeholder="House/Office No., Street, Area" autocomplete="street-address" required>
+                    </div>
+                  </div>
+
+                  <!-- Pin Code -->
+                  <div class="col-md-4">
+                    <label for="address-pincode" class="form-label-custom">
+                      Pin Code / Postal Code <span class="required-star">*</span>
+                    </label>
+                    <div class="input-group-custom">
+                      <span class="input-group-text-custom"><i class="bi bi-pin-map"></i></span>
+                      <input type="text" id="address-pincode" class="form-control-custom" placeholder="Postal Code" autocomplete="postal-code" required>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- -------------------------------------------------------------
+                     Section 2: Document Attachments & Uploads
+                     ------------------------------------------------------------- -->
+                <div class="section-divider-custom">
+                  <span><i class="bi bi-paperclip"></i> Mandatory Document Attachments</span>
+                </div>
+
+                <!-- Upload Guidelines Note -->
+                <div class="guidelines-box">
+                  <div class="fw-bold text-dark mb-2">
+                    <i class="bi bi-info-circle-fill text-primary me-1"></i> Document Upload Guidelines:
+                  </div>
+                  <ul>
+                    <li><strong>Accepted File Formats:</strong> .JPEG, .JPG, or .PDF only.</li>
+                    <li><strong>File Size:</strong> Each file must be between <strong>5 KB and 3 MB</strong>.</li>
+                    <li><strong>File Naming:</strong> Use alphanumeric characters only without spaces or special symbols (e.g. <code>photo123.jpg</code>, <code>editor_letter.pdf</code>).</li>
+                    <li><strong>International Journalists:</strong> Non-Indian media representatives must attach a valid <strong>J-Visa</strong> under the Government ID section.</li>
+                  </ul>
+                </div>
+
+                <div class="row g-4">
+                  <!-- 1. Recent Passport Photo -->
+                  <div class="col-md-6">
+                    <div class="file-upload-card">
+                      <label class="form-label-custom justify-content-between" for="doc-photo">
+                        <span>Recent Passport Photograph <span class="required-star">*</span></span>
+                        <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="tooltip" title="Front-facing portrait on a light background. Format: .jpg, .jpeg, .pdf (5KB - 3MB)."></i>
+                      </label>
+                      <input type="file" id="doc-photo" class="form-control" accept=".jpg,.jpeg,.pdf" required onchange="handleFileSelected(this)">
+                      <div class="file-feedback small text-muted mt-1">Format: JPG, PDF (Max 3MB)</div>
+                    </div>
+                  </div>
+
+                  <!-- 2. Government ID Proof -->
+                  <div class="col-md-6">
+                    <div class="file-upload-card">
+                      <label class="form-label-custom justify-content-between" for="doc-govid">
+                        <span>Government ID Proof <span class="required-star">*</span></span>
+                        <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="tooltip" title="Aadhaar Card, Passport, Voter ID, Driver's License, or J-Visa for Foreign Media. Format: .jpg, .jpeg, .pdf (5KB - 3MB)."></i>
+                      </label>
+                      <input type="file" id="doc-govid" class="form-control" accept=".jpg,.jpeg,.pdf" required onchange="handleFileSelected(this)">
+                      <div class="file-feedback small text-muted mt-1">Aadhaar / Passport / Voter ID / J-Visa</div>
+                    </div>
+                  </div>
+
+                  <!-- 3. Organisation ID Card -->
+                  <div class="col-md-6">
+                    <div class="file-upload-card">
+                      <label class="form-label-custom justify-content-between" for="doc-orgid">
+                        <span>Media Organisation ID Card <span class="required-star">*</span></span>
+                        <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="tooltip" title="Valid press identification card issued by your media organization. Format: .jpg, .jpeg, .pdf (5KB - 3MB)."></i>
+                      </label>
+                      <input type="file" id="doc-orgid" class="form-control" accept=".jpg,.jpeg,.pdf" required onchange="handleFileSelected(this)">
+                      <div class="file-feedback small text-muted mt-1">Valid Media / Press ID Card</div>
+                    </div>
+                  </div>
+
+                  <!-- 4. Editor's Letter / Self-Declaration -->
+                  <div class="col-md-6">
+                    <div class="file-upload-card">
+                      <label class="form-label-custom justify-content-between" for="doc-nomination">
+                        <span>Editor's Letter / Self-Declaration <span class="required-star">*</span></span>
+                        <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="tooltip" title="Official nomination letter on media letterhead signed by Editor, or Self-Declaration for freelance critics. Format: .jpg, .jpeg, .pdf."></i>
+                      </label>
+                      <input type="file" id="doc-nomination" class="form-control" accept=".jpg,.jpeg,.pdf" required onchange="handleFileSelected(this)">
+                      <div class="file-feedback small text-muted mt-1">Letterhead signed by Editor / Self-declaration</div>
+                    </div>
+                  </div>
+
+                  <!-- 5. PIB / State Govt Card (Optional) -->
+                  <div class="col-12">
+                    <div class="file-upload-card">
+                      <label class="form-label-custom justify-content-between" for="doc-pibcard">
+                        <span>PIB / State Government Press Accreditation Card (Optional)</span>
+                        <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="tooltip" title="If currently accredited with PIB or State Directorate of Information, attach your card for expedited verification."></i>
+                      </label>
+                      <input type="file" id="doc-pibcard" class="form-control" accept=".jpg,.jpeg,.pdf" onchange="handleFileSelected(this)">
+                      <div class="file-feedback small text-muted mt-1">Optional: Attach if you hold a valid PIB/State Press Card</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- -------------------------------------------------------------
+                     Section 3: Proof of Previous Works
+                     ------------------------------------------------------------- -->
+                <div class="section-divider-custom">
+                  <span><i class="bi bi-journal-text"></i> Proof of Previous Work (Film Coverage Samples)</span>
+                </div>
+
+                <div class="guidelines-box mb-3">
+                  <p class="mb-1 text-dark">
+                    <strong>Submission Requirement:</strong> Upload or provide links to at least <strong>5 published articles, reports, video stories, or photo essays</strong> on film festivals/cinema.
+                  </p>
+                  <p class="small text-muted mb-0">
+                    The applicant's byline or authorship must be clearly identifiable. If byline is absent, an editor's confirmation letter must be provided.
+                  </p>
+                </div>
+
+                <div class="row g-3">
+                  <!-- File Upload for Clippings -->
+                  <div class="col-md-6">
+                    <div class="file-upload-card h-100">
+                      <label class="form-label-custom" for="doc-samples">
+                        Combined PDF of Published Work Samples <span class="required-star">*</span>
+                      </label>
+                      <input type="file" id="doc-samples" class="form-control" accept=".pdf,.jpg,.jpeg" required onchange="handleFileSelected(this)">
+                      <div class="file-feedback small text-muted mt-2">Combined PDF with published clippings/scans (Up to 3MB)</div>
+                    </div>
+                  </div>
+
+                  <!-- Online Links Container -->
+                  <div class="col-md-6">
+                    <div class="file-upload-card h-100">
+                      <label class="form-label-custom">Online Story / Broadcast Video Links</label>
+                      <div id="links-container">
+                        <div class="link-entry-row">
+                          <input type="url" class="form-control" placeholder="https://news-outlet.com/film-review-sample-1">
+                        </div>
+                      </div>
+                      <button type="button" class="btn-add-link mt-2" onclick="addStoryLink()">
+                        <i class="bi bi-plus-circle"></i> Add Another Story Link
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- -------------------------------------------------------------
+                     Section 4: Declarations & Agreements
+                     ------------------------------------------------------------- -->
+                <div class="section-divider-custom">
+                  <span><i class="bi bi-shield-check"></i> Declarations & Terms</span>
+                </div>
+
+                <div class="mb-4">
+                  <label class="custom-checkbox-styled" for="agree-policy">
+                    <input type="checkbox" id="agree-policy" required>
+                    <span>
+                      I have read and agree to the <a href="https://pib.gov.in" target="_blank" class="text-primary fw-semibold">IFFI 2026 Media Accreditation Policy</a>, Code of Conduct, and Press Center guidelines.
+                    </span>
+                  </label>
+
+                  <label class="custom-checkbox-styled" for="agree-declaration">
+                    <input type="checkbox" id="agree-declaration" required>
+                    <span>
+                      I solemnly certify that all details and documents provided in this application are authentic and true to the best of my knowledge. I understand that false claims of authorship or identity will lead to immediate disqualification.
+                    </span>
+                  </label>
+                </div>
+
+                <!-- -------------------------------------------------------------
+                     Section 5: Submission Actions
+                     ------------------------------------------------------------- -->
+                <div class="form-submit-wrapper">
+                  <button type="submit" id="btn-submit-app" class="btn-reg-primary">
+                    <span id="btn-submit-label">Submit Accreditation Application</span>
+                    <i class="bi bi-send-check" aria-hidden="true"></i>
+                  </button>
+
+                  <button type="button" class="btn-reg-secondary" onclick="handleSaveDraft()">
+                    <i class="bi bi-save me-1"></i> Save Draft
+                  </button>
+                </div>
+
+                <!-- Support & Helpdesk Inside Card -->
+                <div class="card-support-footer">
+                  <p class="mb-1">
+                    Need assistance or experiencing upload issues? Contact the <strong>PIB Media Facilitation Desk</strong>:
+                  </p>
+                  <p class="mb-0">
+                    <a href="mailto:media.iffi@pib.gov.in"><i class="bi bi-envelope-fill me-1"></i> media.iffi@pib.gov.in</a> &bull; 
+                    <a href="mailto:pib.iffi@gmail.com"><i class="bi bi-envelope me-1"></i> pib.iffi@gmail.com</a>
+                  </p>
+                </div>
+
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       Site Footer
+       ========================================================================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p class="mb-1 fw-semibold text-dark">
+        &copy; 2026 57<sup>th</sup> International Film Festival of India (IFFI) | Press Information Bureau (PIB)
+      </p>
+      <p class="small text-muted mb-2">
+        Organised by National Film Development Corporation (NFDC), Ministry of Information & Broadcasting, Government of India & Entertainment Society of Goa (ESG)
+      </p>
+      <ul class="footer-links" role="list">
+        <li><a href="login_form.html">Delegate Login</a></li>
+        <li><span class="text-muted" aria-hidden="true">•</span></li>
+        <li><a href="#privacy" onclick="alert('57th IFFI Privacy Policy')">Privacy Policy</a></li>
+        <li><span class="text-muted" aria-hidden="true">•</span></li>
+        <li><a href="#terms" onclick="alert('57th IFFI Media Accreditation Terms')">Accreditation Guidelines</a></li>
+        <li><span class="text-muted" aria-hidden="true">•</span></li>
+        <li><a href="#support" onclick="alert('PIB Media Desk: media.iffi@pib.gov.in')">PIB Support Desk</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       Offcanvas Menu Drawer
+       ========================================================================= -->
+  <div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="iffiMenuOffcanvas" aria-labelledby="iffiMenuOffcanvasLabel">
+    <div class="offcanvas-header offcanvas-header-custom">
+      <div class="d-flex align-items-center gap-2">
+        <img src="assets/logos/IFFI57.png" alt="57th IFFI Logo" style="height: 32px;">
+        <h5 class="offcanvas-title fw-bold text-dark mb-0" id="iffiMenuOffcanvasLabel">57th IFFI 2026</h5>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+      <ul class="offcanvas-nav-list">
+        <li class="offcanvas-nav-item">
+          <a href="https://www.iffigoa.org" target="_blank"><i class="bi bi-house-door"></i> Festival Home</a>
+        </li>
+        <li class="offcanvas-nav-item">
+          <a href="login_form.html"><i class="bi bi-box-arrow-in-right"></i> Event Portal Login</a>
+        </li>
+        <li class="offcanvas-nav-item">
+          <a href="media_registration.html" class="text-primary"><i class="bi bi-newspaper"></i> Media Accreditation</a>
+        </li>
+        <li class="offcanvas-nav-item">
+          <a href="#screenings"><i class="bi bi-camera-reels"></i> Screenings & Schedule</a>
+        </li>
+        <li class="offcanvas-nav-item">
+          <a href="#film-bazaar"><i class="bi bi-briefcase"></i> Waves / Film Bazaar</a>
+        </li>
+        <li class="offcanvas-nav-item">
+          <a href="#venue"><i class="bi bi-geo-alt"></i> Venue & Festival Map</a>
+        </li>
+        <li class="offcanvas-nav-item">
+          <a href="#contact"><i class="bi bi-telephone"></i> PIB Media Desk & Help</a>
+        </li>
+      </ul>
+      <div class="p-4 border-top mt-3 bg-light">
+        <div class="d-flex align-items-center gap-3">
+          <img src="assets/logos/GovtGoa.png" alt="Govt Goa" style="height: 28px;">
+          <img src="assets/logos/MIB.png" alt="MIB" style="height: 28px;">
+          <img src="assets/logos/pib-logo.png" alt="PIB" style="height: 28px;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Confirmation Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg" style="border-radius: var(--radius-lg);">
+        <div class="modal-body text-center p-4 p-md-5">
+          <div class="mb-3 text-success" style="font-size: 3.5rem;">
+            <i class="bi bi-check-circle-fill"></i>
+          </div>
+          <h3 class="fw-bold text-dark mb-2" id="successModalLabel">Application Submitted!</h3>
+          <p class="text-muted mb-4">
+            Thank you for applying for Media Accreditation for the <strong>57th International Film Festival of India (IFFI 2026)</strong>.
+            Your application reference number is <span class="badge bg-primary fs-6">IFFI-2026-MED-<span id="ref-number">9842</span></span>.
+          </p>
+          <p class="small text-muted mb-4">
+            A confirmation email and SMS with further verification instructions has been sent to your registered contact.
+          </p>
+          <button type="button" class="btn btn-reg-primary w-100" data-bs-dismiss="modal">
+            Done & Return to Portal
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+  
+  <script>
+    // Comprehensive Country Codes Data
+    const countryCodes = [
+      { value: '+91', label: 'India (+91)' },
+      { value: '+1', label: 'USA / Canada (+1)' },
+      { value: '+44', label: 'UK (+44)' },
+      { value: '+61', label: 'Australia (+61)' },
+      { value: '+33', label: 'France (+33)' },
+      { value: '+49', label: 'Germany (+49)' },
+      { value: '+81', label: 'Japan (+81)' },
+      { value: '+971', label: 'UAE (+971)' },
+      { value: '+65', label: 'Singapore (+65)' },
+      { value: '+82', label: 'South Korea (+82)' },
+      { value: '+39', label: 'Italy (+39)' },
+      { value: '+34', label: 'Spain (+34)' },
+      { value: '+7', label: 'Russia (+7)' },
+      { value: '+86', label: 'China (+86)' },
+      { value: '+55', label: 'Brazil (+55)' },
+      { value: '+27', label: 'South Africa (+27)' },
+      { value: '+880', label: 'Bangladesh (+880)' },
+      { value: '+94', label: 'Sri Lanka (+94)' },
+      { value: '+977', label: 'Nepal (+977)' },
+      { value: '+60', label: 'Malaysia (+60)' },
+      { value: '+66', label: 'Thailand (+66)' },
+      { value: '+62', label: 'Indonesia (+62)' },
+      { value: '+31', label: 'Netherlands (+31)' },
+      { value: '+41', label: 'Switzerland (+41)' },
+      { value: '+46', label: 'Sweden (+46)' },
+      { value: '+47', label: 'Norway (+47)' },
+      { value: '+45', label: 'Denmark (+45)' },
+      { value: '+353', label: 'Ireland (+353)' },
+      { value: '+64', label: 'New Zealand (+64)' },
+      { value: '+90', label: 'Turkey (+90)' },
+      { value: '+966', label: 'Saudi Arabia (+966)' },
+      { value: '+974', label: 'Qatar (+974)' },
+      { value: '+965', label: 'Kuwait (+965)' },
+      { value: '+968', label: 'Oman (+968)' },
+      { value: '+973', label: 'Bahrain (+973)' },
+      { value: '+351', label: 'Portugal (+351)' },
+      { value: '+30', label: 'Greece (+30)' },
+      { value: '+48', label: 'Poland (+48)' },
+      { value: '+43', label: 'Austria (+43)' },
+      { value: '+32', label: 'Belgium (+32)' },
+      { value: '+52', label: 'Mexico (+52)' },
+      { value: '+54', label: 'Argentina (+54)' }
+    ];
+
+    // Initialize Choices.js Country Code Selectors & Tooltips
+    document.addEventListener('DOMContentLoaded', function () {
+      // Setup country selectors
+      document.querySelectorAll('.country-code-select').forEach(select => {
+        countryCodes.forEach(c => {
+          if (c.value !== '+91') {
+            const opt = document.createElement('option');
+            opt.value = c.value;
+            opt.textContent = c.label;
+            select.appendChild(opt);
+          }
+        });
+
+        new Choices(select, {
+          searchEnabled: true,
+          itemSelectText: '',
+          shouldSort: false,
+          placeholder: true,
+          placeholderValue: 'Code'
+        });
+      });
+
+      // Initialize Tooltips
+      const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+      tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl, {
+          trigger: 'hover',
+          container: 'body'
+        });
+      });
+    });
+
+    // Dynamic Story / Video Links Adder
+    function addStoryLink() {
+      const container = document.getElementById('links-container');
+      const row = document.createElement('div');
+      row.className = 'link-entry-row';
+      row.innerHTML = `
+        <input type="url" class="form-control" placeholder="https://news-outlet.com/film-review-sample">
+        <button type="button" class="btn-remove-link" onclick="this.parentElement.remove()" title="Remove Link">
+          <i class="bi bi-trash"></i>
+        </button>
+      `;
+      container.appendChild(row);
+    }
+
+    // File selected visual feedback
+    function handleFileSelected(input) {
+      if (input.files && input.files[0]) {
+        const file = input.files[0];
+        const fileSizeMB = (file.size / (1024 * 1024)).toFixed(2);
+        const card = input.closest('.file-upload-card');
+        const feedback = card.querySelector('.file-feedback');
+        if (feedback) {
+          feedback.innerHTML = `<span class="text-success fw-semibold"><i class="bi bi-check-circle-fill me-1"></i> ${file.name} (${fileSizeMB} MB)</span>`;
+        }
+      }
+    }
+
+    // Save draft simulation
+    function handleSaveDraft() {
+      const name = document.getElementById('applicant-name').value;
+      alert('Application draft saved successfully in your local browser session.');
+    }
+
+    // Submit Application Handler
+    function handleRegistrationSubmit(e) {
+      e.preventDefault();
+      
+      const btn = document.getElementById('btn-submit-app');
+      const label = document.getElementById('btn-submit-label');
+      
+      btn.disabled = true;
+      label.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Submitting Application...';
+
+      setTimeout(() => {
+        btn.disabled = false;
+        label.textContent = 'Submit Accreditation Application';
+        
+        // Random reference ID generator
+        const refId = Math.floor(1000 + Math.random() * 9000);
+        document.getElementById('ref-number').textContent = refId;
+        
+        // Show Bootstrap Modal
+        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+        successModal.show();
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
