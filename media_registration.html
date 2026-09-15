@@ -27,7 +27,7 @@
       <nav class="nav-container" aria-label="Official Partner Navigation">
         
         <!-- Partner & Government Logos -->
-        <ul class="logos-wrapper" role="list">
+       <ul class="logos-wrapper" role="list">
           <li>
             <a href="https://mib.gov.in" target="_blank" rel="noopener noreferrer" class="logo-link" title="Ministry of Information and Broadcasting">
               <img src="assets/logos/MIB.png" alt="Ministry of Information and Broadcasting" class="logo-img">
@@ -70,16 +70,16 @@
           
           <li class="d-none d-md-block">
             <a href="https://films.wavesbazaar.com/" target="_blank" rel="noopener noreferrer" class="logo-link" title="Film Bazaar">
-              <img src="assets/logos/footer-logo.png" alt="Film Bazaar" class="logo-img">
+              <img src="assets/logos/logo-waves-film-bazaar.png" alt="Film Bazaar" class="logo-img">
             </a>
           </li>
         </ul>
 
         <!-- Right Side Actions & Offcanvas Menu Trigger -->
         <div class="header-actions">
-          <div class="nav-edition-badge">
+          <!-- <div class="nav-edition-badge">
             <span class="badge-dot"></span> 57th IFFI 2026
-          </div>
+          </div> -->
           
           <button class="menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#iffiMenuOffcanvas" aria-controls="iffiMenuOffcanvas" aria-label="Open Navigation Menu">
             <i class="bi bi-grid-3x3-gap-fill" aria-hidden="true"></i>
@@ -148,7 +148,7 @@
                     </label>
                     <div class="input-group-custom">
                       <span class="input-group-text-custom"><i class="bi bi-building"></i></span>
-                      <input type="text" id="org-name" class="form-control-custom" placeholder="e.g. The Times, Reuters, Film Companion" autocomplete="organization" required>
+                      <input type="text" id="org-name" class="form-control-custom" placeholder="Enter name of media organisation / outlet" autocomplete="organization" required>
                     </div>
                   </div>
 
@@ -227,7 +227,7 @@
                     </label>
                     <div class="input-group-custom">
                       <span class="input-group-text-custom"><i class="bi bi-globe"></i></span>
-                      <input type="text" id="address-country" class="form-control-custom" placeholder="e.g. India, France, USA" autocomplete="country-name" required>
+                      <input type="text" id="address-country" class="form-control-custom" placeholder="Enter country" autocomplete="country-name" required>
                     </div>
                   </div>
 
@@ -289,7 +289,7 @@
                     <i class="bi bi-info-circle-fill text-primary me-1"></i> Document Upload Guidelines:
                   </div>
                   <ul>
-                    <li><strong>Accepted File Formats:</strong> .JPEG, .JPG, or .PDF only.</li>
+                    <li><strong>Accepted File Formats:</strong> .JPEG, .JPG, or .PDF only (wherever applicable).</li>
                     <li><strong>File Size:</strong> Each file must be between <strong>5 KB and 3 MB</strong>.</li>
                     <li><strong>File Naming:</strong> Use alphanumeric characters only without spaces or special symbols (e.g. <code>photo123.jpg</code>, <code>editor_letter.pdf</code>).</li>
                     <li><strong>International Journalists:</strong> Non-Indian media representatives must attach a valid <strong>J-Visa</strong> under the Government ID section.</li>
@@ -379,9 +379,10 @@
                   <div class="col-md-6">
                     <div class="file-upload-card h-100">
                       <label class="form-label-custom" for="doc-samples">
-                        Combined PDF of Published Work Samples <span class="required-star">*</span>
+                        Combined PDF of Published Work Samples
+                        <span class="badge bg-light text-secondary border ms-1 fw-normal" style="font-size: 0.72rem;">Either PDF or Link Required</span>
                       </label>
-                      <input type="file" id="doc-samples" class="form-control" accept=".pdf,.jpg,.jpeg" required onchange="handleFileSelected(this)">
+                      <input type="file" id="doc-samples" class="form-control" accept=".pdf,.jpg,.jpeg" onchange="handleFileSelected(this)">
                       <div class="file-feedback small text-muted mt-2">Combined PDF with published clippings/scans (Up to 3MB)</div>
                     </div>
                   </div>
@@ -389,7 +390,10 @@
                   <!-- Online Links Container -->
                   <div class="col-md-6">
                     <div class="file-upload-card h-100">
-                      <label class="form-label-custom">Online Story / Broadcast Video Links</label>
+                      <label class="form-label-custom">
+                        Online Story / Broadcast Video Links
+                        <span class="badge bg-light text-secondary border ms-1 fw-normal" style="font-size: 0.72rem;">Either PDF or Link Required</span>
+                      </label>
                       <div id="links-container">
                         <div class="link-entry-row">
                           <input type="url" class="form-control" placeholder="https://news-outlet.com/film-review-sample-1">
@@ -413,14 +417,14 @@
                   <label class="custom-checkbox-styled" for="agree-policy">
                     <input type="checkbox" id="agree-policy" required>
                     <span>
-                      I have read and agree to the <a href="https://pib.gov.in" target="_blank" class="text-primary fw-semibold">IFFI 2026 Media Accreditation Policy</a>, Code of Conduct, and Press Center guidelines.
+                      I have read and agree to the <a href="https://pib.gov.in" target="_blank" class="text-primary fw-semibold">IFFI 2026 Media Accreditation Policy</a>
                     </span>
                   </label>
 
                   <label class="custom-checkbox-styled" for="agree-declaration">
                     <input type="checkbox" id="agree-declaration" required>
                     <span>
-                      I solemnly certify that all details and documents provided in this application are authentic and true to the best of my knowledge. I understand that false claims of authorship or identity will lead to immediate disqualification.
+                      I solemnly certify that all details and documents provided in this application are authentic and true to the best of my knowledge. I understand that false claims of authorship or identity will lead to disqualification.
                     </span>
                   </label>
                 </div>
@@ -486,7 +490,7 @@
   <!-- =========================================================================
        Offcanvas Menu Drawer
        ========================================================================= -->
-  <div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="iffiMenuOffcanvas" aria-labelledby="iffiMenuOffcanvasLabel">
+  <!-- <div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="iffiMenuOffcanvas" aria-labelledby="iffiMenuOffcanvasLabel">
     <div class="offcanvas-header offcanvas-header-custom">
       <div class="d-flex align-items-center gap-2">
         <img src="assets/logos/IFFI57.png" alt="57th IFFI Logo" style="height: 32px;">
@@ -526,7 +530,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Success Confirmation Modal -->
   <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
@@ -672,6 +676,22 @@
     function handleRegistrationSubmit(e) {
       e.preventDefault();
       
+      // Validation: Ensure at least one proof of work (either PDF upload or 1+ online story link) is provided
+      const pdfInput = document.getElementById('doc-samples');
+      const hasPdf = pdfInput.files && pdfInput.files.length > 0;
+      
+      const linkInputs = document.querySelectorAll('#links-container input[type="url"]');
+      let hasLink = false;
+      linkInputs.forEach(input => {
+        if (input.value.trim() !== '') hasLink = true;
+      });
+
+      if (!hasPdf && !hasLink) {
+        alert('Please provide your proof of work by either uploading a Combined PDF of Published Work Samples OR providing at least one Online Story/Video Link.');
+        pdfInput.focus();
+        return;
+      }
+
       const btn = document.getElementById('btn-submit-app');
       const label = document.getElementById('btn-submit-label');
       
