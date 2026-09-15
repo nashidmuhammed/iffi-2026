@@ -103,9 +103,9 @@
             
             <!-- Card Header Banner -->
             <div class="reg-card-header">
-              <div class="reg-header-badge">
+              <!-- <div class="reg-header-badge">
                 <span class="spark-diamond"></span> 57th Edition • Press Information Bureau
-              </div>
+              </div> -->
               <h1 class="reg-main-title">MEDIA ACCREDITATION APPLICATION</h1>
               <div class="reg-sub-title">57th International Film Festival of India (IFFI 2026)</div>
               <p class="reg-desc">
@@ -433,24 +433,21 @@
                      Section 5: Submission Actions
                      ------------------------------------------------------------- -->
                 <div class="form-submit-wrapper">
+                  <button type="button" class="btn-reg-secondary" onclick="handleSaveDraft()">
+                    <i class="bi bi-save me-1"></i> Save Draft
+                  </button>
+
                   <button type="submit" id="btn-submit-app" class="btn-reg-primary">
                     <span id="btn-submit-label">Submit Accreditation Application</span>
                     <i class="bi bi-send-check" aria-hidden="true"></i>
                   </button>
 
-                  <button type="button" class="btn-reg-secondary" onclick="handleSaveDraft()">
-                    <i class="bi bi-save me-1"></i> Save Draft
-                  </button>
                 </div>
 
                 <!-- Support & Helpdesk Inside Card -->
                 <div class="card-support-footer">
-                  <p class="mb-1">
-                    Need assistance or experiencing upload issues? Contact the <strong>PIB Media Facilitation Desk</strong>:
-                  </p>
                   <p class="mb-0">
-                    <a href="mailto:media.iffi@pib.gov.in"><i class="bi bi-envelope-fill me-1"></i> media.iffi@pib.gov.in</a> &bull; 
-                    <a href="mailto:pib.iffi@gmail.com"><i class="bi bi-envelope me-1"></i> pib.iffi@gmail.com</a>
+                    Need a hand with accreditation or have a question? Drop us an email at <a href="mailto:iffi.mediadesk@pib.gov.in" class="fw-semibold">iffi.mediadesk@pib.gov.in</a>
                   </p>
                 </div>
 
@@ -482,7 +479,7 @@
         <li><span class="text-muted" aria-hidden="true">•</span></li>
         <li><a href="#terms" onclick="alert('57th IFFI Media Accreditation Terms')">Accreditation Guidelines</a></li>
         <li><span class="text-muted" aria-hidden="true">•</span></li>
-        <li><a href="#support" onclick="alert('PIB Media Desk: media.iffi@pib.gov.in')">PIB Support Desk</a></li>
+        <li><a href="#support" onclick="alert('PIB Media Desk: iffi.mediadesk@pib.gov.in')">PIB Support Desk</a></li>
       </ul>
     </div>
   </footer>
