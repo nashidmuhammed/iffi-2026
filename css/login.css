@@ -265,7 +265,28 @@ body {
   z-index: 10;
 }
 
+/* Background Peacock Artwork (Positioned Outside & Behind The Card Box) */
+.peacock-outer-art {
+  position: absolute;
+  top: 50%;
+  left: -330px;
+  transform: translateY(-50%);
+  width: 880px;
+  max-width: none;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.peacock-art-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.85;
+}
+
 .login-card-master {
+  position: relative;
+  z-index: 3;
   background: var(--bg-card);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-light);
@@ -282,10 +303,13 @@ body {
 
 /* Left Brand Showcase Column - Minimalist White & Royal Blue Theme */
 .brand-showcase-panel {
-  background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(248, 250, 252, 0.76) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-right: 1px solid var(--border-light);
+  border-left: 4px solid var(--iffi-blue-primary);
   color: var(--text-dark);
-  padding: 44px 36px;
+  padding: 38px 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -300,16 +324,55 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('../assets/peacock-art.png') no-repeat center center / 105%;
-  opacity: 0.26;
-  mix-blend-mode: multiply;
+  background: radial-gradient(circle at 20% 20%, rgba(22, 51, 135, 0.03) 0%, transparent 70%);
   pointer-events: none;
-  transition: opacity var(--transition-normal);
 }
 
 .brand-showcase-content {
   position: relative;
   z-index: 2;
+}
+
+.policy-link {
+  color: var(--iffi-blue-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  display: inline-block;
+  margin-top: 4px;
+  transition: color var(--transition-fast);
+}
+
+.policy-link:hover {
+  color: var(--iffi-blue-deep);
+}
+
+/* About IFFI Card */
+.about-iffi-card {
+  background: rgba(241, 245, 249, 0.7);
+  border: 1px solid rgba(22, 51, 135, 0.1);
+  border-left: 3px solid var(--iffi-spark-gold);
+  border-radius: var(--radius-md);
+  padding: 13px 15px;
+  margin-top: 14px;
+  margin-bottom: 20px;
+}
+
+.about-iffi-title {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--iffi-blue-deep);
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.about-iffi-text {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 0;
 }
 
 .edition-tag {
@@ -850,6 +913,13 @@ body {
 /* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
+@media (max-width: 1200px) {
+  .peacock-outer-art {
+    left: -220px;
+    width: 720px;
+  }
+}
+
 @media (max-width: 991px) {
   .site-header {
     top: 12px;
@@ -878,6 +948,16 @@ body {
     padding-bottom: 40px;
   }
 
+  .peacock-outer-art {
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    width: 520px;
+    max-width: 92vw;
+    opacity: 0.22;
+    z-index: 0;
+  }
+
   .login-card-master {
     grid-template-columns: 1fr;
     max-width: 540px;
@@ -897,6 +977,13 @@ body {
 }
 
 @media (max-width: 576px) {
+  .peacock-outer-art {
+    width: 390px;
+    max-width: 96vw;
+    top: 5px;
+    opacity: 0.18;
+  }
+
   .site-header {
     top: 8px;
     padding: 0 8px;
