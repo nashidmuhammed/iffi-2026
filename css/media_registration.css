@@ -932,3 +932,33 @@ body {
     justify-content: center;
   }
 }
+
+/* ==========================================================================
+   Digital Medium Verification Box Styling
+   ========================================================================== */
+.digital-media-card {
+  background: linear-gradient(135deg, rgba(239, 246, 255, 0.95) 0%, rgba(240, 253, 250, 0.85) 100%);
+  border: 1.5px solid #93c5fd;
+  border-left: 4px solid var(--iffi-blue-primary);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  animation: fadeIn 0.35s ease;
+  position: relative;
+  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.08);
+}
+
+.badge-digital {
+  background: var(--iffi-blue-primary);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 6px rgba(22, 51, 135, 0.2);
+}
+

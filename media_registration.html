@@ -172,14 +172,14 @@
                     </div>
                   </div>
 
-                  <!-- Category -->
+                  <!-- Accreditation Category -->
                   <div class="col-md-6">
                     <label for="media-category" class="form-label-custom">
                       Accreditation Category <span class="required-star">*</span>
                     </label>
                     <div class="input-group-custom">
                       <span class="input-group-text-custom"><i class="bi bi-tag"></i></span>
-                      <select id="media-category" class="form-select-custom" required>
+                      <select id="media-category" class="form-select-custom" onchange="toggleDigitalMediumFields()" required>
                         <option value="" selected disabled>Select your media category</option>
                         <option value="Correspondent (without equipment)">Correspondent / Reporter (without equipment)</option>
                         <option value="Correspondent (with equipment)">Correspondent / Cameraperson (with equipment)</option>
@@ -189,6 +189,54 @@
                         <option value="Freelance Film Critic / Columnist">Freelance Film Critic / Columnist</option>
                         <option value="Official Broadcaster">Official Broadcaster / Agency</option>
                       </select>
+                    </div>
+                  </div>
+
+                  <!-- Conditional Digital Medium Verification Box (Shown ONLY when Digital Medium is selected) -->
+                  <div id="digital-media-container" class="col-12" style="display: none;">
+                    <div class="digital-media-card">
+                      <div class="digital-media-header d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+                        <div class="d-flex align-items-center gap-2">
+                          <span class="badge-digital"><i class="bi bi-globe2"></i> Digital Medium Verification</span>
+                          <span class="text-primary fw-semibold small">Mandatory Details for Digital Portals & Creators</span>
+                        </div>
+                        <!-- <span class="badge bg-light text-secondary border small">57th IFFI Media Accreditation</span> -->
+                      </div>
+                      
+                      <div class="row g-3">
+                        <!-- 1. Screenshot of the home page of their digital portal -->
+                        <div class="col-md-6">
+                          <div class="file-upload-card h-100 bg-white">
+                            <label class="form-label-custom justify-content-between" for="doc-digital-screenshot">
+                              <span>
+                                <i class="bi bi-camera me-1 text-primary"></i>
+                                1. Screenshot of the Home Page of Digital Portal <span class="required-star">*</span>
+                              </span>
+                              <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="tooltip" title="Upload a clear screenshot of the homepage of your digital media portal or channel showing the website URL/masthead. Format: JPG, PNG, PDF (Max 3MB)."></i>
+                            </label>
+                            <input type="file" id="doc-digital-screenshot" class="form-control" accept=".jpg,.jpeg,.png,.pdf" onchange="handleFileSelected(this)">
+                            <div class="file-feedback small text-muted mt-2">Homepage screenshot (.jpg, .png, .pdf up to 3MB)</div>
+                          </div>
+                        </div>
+
+                        <!-- 2. Number of subscribers/followers -->
+                        <div class="col-md-6">
+                          <div class="file-upload-card h-100 bg-white">
+                            <label class="form-label-custom justify-content-between" for="digital-subscribers">
+                              <span>
+                                <i class="bi bi-people me-1 text-primary"></i>
+                                2. Number of Subscribers / Followers <span class="required-star">*</span>
+                              </span>
+                              <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="tooltip" title="Enter the total number of active subscribers or followers across your digital outlet."></i>
+                            </label>
+                            <div class="input-group-custom">
+                              <span class="input-group-text-custom"><i class="bi bi-graph-up-arrow"></i></span>
+                              <input type="text" id="digital-subscribers" class="form-control-custom" placeholder="e.g. 250,000 subscribers / 1.5M followers">
+                            </div>
+                            <div class="small text-muted mt-2">Specify current count or reach</div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -644,6 +692,26 @@
         });
       });
     });
+
+    // Toggle Dynamic Digital Medium Verification Questions based on Accreditation Category
+    function toggleDigitalMediumFields() {
+      const categorySelect = document.getElementById('media-category');
+      const digitalContainer = document.getElementById('digital-media-container');
+      const screenshotInput = document.getElementById('doc-digital-screenshot');
+      const subscribersInput = document.getElementById('digital-subscribers');
+
+      const isDigitalCategory = categorySelect && categorySelect.value === 'Digital & Online Media / Podcaster';
+
+      if (isDigitalCategory) {
+        digitalContainer.style.display = 'block';
+        screenshotInput.setAttribute('required', 'required');
+        subscribersInput.setAttribute('required', 'required');
+      } else {
+        digitalContainer.style.display = 'none';
+        screenshotInput.removeAttribute('required');
+        subscribersInput.removeAttribute('required');
+      }
+    }
 
     // Dynamic Story / Video Links Adder
     function addStoryLink() {
