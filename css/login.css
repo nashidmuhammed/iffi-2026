@@ -204,15 +204,15 @@ body.login-page {
 }
 
 /* ==========================================================================
-   Main Content Layout (Centralized & Filled)
+   Main Content Layout (Centralized & Balanced)
    ========================================================================== */
 .main-content {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 135px);
-  padding: 20px 0 36px 0;
+  min-height: calc(100vh - 120px);
+  padding: 12px 0 16px 0;
   position: relative;
   z-index: 2;
 }
@@ -224,18 +224,18 @@ body.login-page {
 
 .content-wrapper {
   width: 100%;
-  max-width: 1340px;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 20px;
   display: grid;
-  grid-template-columns: minmax(440px, 1fr) 540px;
+  grid-template-columns: minmax(340px, 1fr) 450px;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 20px;
 }
 
 /* ==========================================================================
-   Left Column: Visual Brand Showcase
+   Left Column: Visual Brand Showcase Card (Translucent Glassmorphic)
    ========================================================================== */
 .brand-section {
   padding-left: 0;
@@ -246,18 +246,80 @@ body.login-page {
   z-index: 5;
 }
 
+.brand-showcase-card {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: var(--radius-xl);
+  padding: 24px 28px 20px 28px;
+  box-shadow: 0 10px 32px rgba(12, 35, 64, 0.07);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  max-width: 480px;
+  width: 100%;
+}
+
+.brand-showcase-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, #0b439c 0%, #2563eb 50%, #f59e0b 100%);
+}
+
+.brand-showcase-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 44px rgba(12, 35, 64, 0.11);
+}
+
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(239, 246, 255, 0.75);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  color: var(--iffi-blue-primary);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.76rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 12px;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2.5px rgba(16, 185, 129, 0.25);
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.25); opacity: 0.7; }
+}
+
 .brand-header-block {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .showcase-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.35rem, 3vw, 3.2rem);
+  font-size: clamp(1.75rem, 2.1vw, 2.25rem);
   font-weight: 800;
-  line-height: 1.14;
+  line-height: 1.15;
   color: var(--iffi-navy-deep);
-  margin-bottom: 10px;
-  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+  letter-spacing: -0.4px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
 .showcase-title sup {
@@ -268,45 +330,57 @@ body.login-page {
 
 .showcase-theme {
   font-family: var(--font-heading);
-  font-size: clamp(0.98rem, 1.15vw, 1.15rem);
+  font-size: 0.88rem;
   font-weight: 800;
   color: var(--iffi-blue-vibrant);
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.showcase-theme .theme-accent {
+  background: linear-gradient(135deg, #0b439c 0%, #1d4ed8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Event Meta List */
 .event-meta-list {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 22px;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
 }
 
 .meta-item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
 }
 
 .meta-icon {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  background: #0f3583;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--iffi-blue-primary);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 0.78rem;
   flex-shrink: 0;
-  box-shadow: 0 2px 6px rgba(15, 53, 131, 0.25);
+  box-shadow: 0 1px 4px rgba(11, 67, 156, 0.25);
 }
 
 .meta-text {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
+  font-size: 0.86rem;
   font-weight: 700;
   color: var(--iffi-navy-deep);
   letter-spacing: -0.2px;
@@ -317,50 +391,41 @@ body.login-page {
   top: -0.5em;
 }
 
-/* About IFFI Glassmorphic Card */
+/* About IFFI Glassmorphic Card inside Showcase */
 .about-iffi-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1.5px solid rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  padding: 24px 28px;
-  max-width: 540px;
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
   width: 100%;
-  box-shadow: 0 10px 30px rgba(12, 35, 64, 0.05);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.about-iffi-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 36px rgba(12, 35, 64, 0.08);
+  box-shadow: none;
 }
 
 .about-iffi-title {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--iffi-navy-deep);
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .about-iffi-title i {
   color: var(--iffi-blue-light);
-  font-size: 1.2rem;
+  font-size: 0.95rem;
 }
 
 .about-iffi-text {
-  font-size: 0.88rem;
-  line-height: 1.6;
+  font-size: 0.8rem;
+  line-height: 1.48;
   color: #334155;
   margin: 0;
 }
 
 /* ==========================================================================
-   Right Column: Portal Sign In Floating Card
+   Right Column: Portal Sign In Floating Card (Compact & Optimized)
    ========================================================================== */
 .login-card-section {
   display: flex;
@@ -373,59 +438,59 @@ body.login-page {
 
 .login-card {
   width: 100%;
-  max-width: 540px;
+  max-width: 450px;
   background: #ffffff;
   border-radius: var(--radius-xl);
   border: 1px solid rgba(226, 232, 240, 0.85);
   box-shadow: var(--shadow-card);
-  padding: 40px 42px 34px 42px;
+  padding: 24px 28px 20px 28px;
   position: relative;
   transition: box-shadow var(--transition-normal);
 }
 
 .login-card:hover {
-  box-shadow: 0 24px 60px rgba(12, 35, 64, 0.12), 0 4px 12px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 20px 50px rgba(12, 35, 64, 0.12);
 }
 
 .form-header {
-  margin-bottom: 22px;
+  margin-bottom: 12px;
 }
 
 .form-title {
   font-family: var(--font-heading);
-  font-size: 1.85rem;
+  font-size: 1.55rem;
   font-weight: 700;
   color: var(--text-dark);
-  margin-bottom: 8px;
-  letter-spacing: -0.4px;
+  margin-bottom: 4px;
+  letter-spacing: -0.3px;
 }
 
 .form-subtitle {
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
   margin: 0;
-  line-height: 1.48;
+  line-height: 1.35;
 }
 
 /* Auth Segmented Tabs */
 .auth-tabs-nav {
   display: flex;
-  gap: 12px;
-  margin-bottom: 22px;
+  gap: 10px;
+  margin-bottom: 14px;
 }
 
 .auth-tab-btn {
   flex: 1;
-  height: 48px;
-  padding: 10px 18px;
+  height: 42px;
+  padding: 8px 14px;
   border-radius: var(--radius-md);
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   cursor: pointer;
   transition: all var(--transition-fast);
   background: #ffffff;
@@ -435,7 +500,7 @@ body.login-page {
 }
 
 .auth-tab-btn i {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
 }
 
 .auth-tab-btn.active {
@@ -451,15 +516,15 @@ body.login-page {
 
 /* Form Fields */
 .form-group-custom {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .form-label-custom {
   display: block;
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: #1e293b;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .input-wrapper {
@@ -470,19 +535,19 @@ body.login-page {
 
 .input-icon-prefix {
   position: absolute;
-  left: 16px;
+  left: 14px;
   color: var(--iffi-blue-light);
-  font-size: 1.1rem;
+  font-size: 1rem;
   pointer-events: none;
   transition: color var(--transition-fast);
 }
 
 .input-control-custom {
   width: 100%;
-  height: 52px;
-  padding: 12px 16px 12px 46px;
+  height: 44px;
+  padding: 10px 14px 10px 42px;
   font-family: var(--font-primary);
-  font-size: 0.96rem;
+  font-size: 0.92rem;
   color: var(--text-dark);
   background-color: #ffffff;
   border: 1.5px solid var(--border-light);
@@ -493,18 +558,18 @@ body.login-page {
 
 .input-control-custom:focus {
   border-color: var(--iffi-blue-light);
-  box-shadow: 0 0 0 3.5px rgba(37, 99, 235, 0.12);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
 .password-toggle-btn {
   position: absolute;
-  right: 14px;
+  right: 12px;
   background: none;
   border: none;
   color: var(--text-light);
   cursor: pointer;
-  padding: 6px;
-  font-size: 1.05rem;
+  padding: 4px;
+  font-size: 1rem;
   transition: color var(--transition-fast);
 }
 
@@ -517,22 +582,22 @@ body.login-page {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
-  font-size: 0.85rem;
+  margin-bottom: 14px;
+  font-size: 0.82rem;
 }
 
 .custom-checkbox-label {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   cursor: pointer;
   color: var(--text-muted);
   user-select: none;
 }
 
 .custom-checkbox-label input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   accent-color: var(--iffi-blue-primary);
   cursor: pointer;
 }
@@ -552,17 +617,17 @@ body.login-page {
 /* Primary Action Button */
 .btn-primary-action {
   width: 100%;
-  height: 52px;
+  height: 46px;
   background: #004bb7;
   color: #ffffff;
   border: none;
   border-radius: var(--radius-md);
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.02rem;
+  font-size: 0.98rem;
   letter-spacing: 0.3px;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 75, 183, 0.28);
+  box-shadow: 0 3px 12px rgba(0, 75, 183, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -572,7 +637,7 @@ body.login-page {
 
 .btn-primary-action:hover {
   background: #083785;
-  box-shadow: 0 6px 18px rgba(0, 75, 183, 0.38);
+  box-shadow: 0 5px 16px rgba(0, 75, 183, 0.35);
   transform: translateY(-1px);
 }
 
@@ -585,8 +650,8 @@ body.login-page {
   background: var(--iffi-blue-subtle);
   border: 1px dashed rgba(29, 78, 216, 0.3);
   border-radius: var(--radius-md);
-  padding: 18px;
-  margin-top: 16px;
+  padding: 14px;
+  margin-top: 12px;
   text-align: center;
   display: none;
   animation: fadeIn 0.3s ease;
@@ -599,14 +664,14 @@ body.login-page {
 .otp-digit-inputs {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin: 14px 0;
+  gap: 6px;
+  margin: 10px 0;
 }
 
 .otp-digit {
-  width: 42px;
-  height: 46px;
-  font-size: 1.2rem;
+  width: 38px;
+  height: 42px;
+  font-size: 1.15rem;
   font-family: var(--font-heading);
   font-weight: 700;
   text-align: center;
@@ -623,7 +688,7 @@ body.login-page {
 }
 
 .resend-timer-text {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
 }
 
@@ -635,15 +700,15 @@ body.login-page {
 
 /* Alternate Links & Help */
 .form-footer-nav {
-  margin-top: 24px;
+  margin-top: 14px;
   text-align: center;
 }
 
 .support-prompt {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
-  margin-bottom: 12px;
-  line-height: 1.5;
+  margin-bottom: 6px;
+  line-height: 1.4;
 }
 
 .support-prompt a.email-link {
@@ -658,9 +723,9 @@ body.login-page {
 }
 
 .register-prompt {
-  font-size: 0.86rem;
+  font-size: 0.82rem;
   color: var(--text-body);
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }
 
 .register-prompt a.register-link {
@@ -678,8 +743,8 @@ body.login-page {
 .back-home-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.82rem;
+  gap: 5px;
+  font-size: 0.78rem;
   font-weight: 600;
   color: #475569;
   text-decoration: none;
@@ -791,18 +856,10 @@ body.login-page {
    Responsive Breakpoints
    ========================================================================== */
 @media (max-width: 1400px) {
-  .brand-section {
-    padding-left: 0;
-  }
-  
   .content-wrapper {
-    grid-template-columns: minmax(380px, 1fr) 530px;
-    gap: 24px;
-    padding: 0 24px;
-  }
-
-  .login-card {
-    max-width: 530px;
+    max-width: 960px;
+    gap: 20px;
+    padding: 0 20px;
   }
 }
 
@@ -820,25 +877,22 @@ body.login-page {
     justify-content: flex-start;
   }
 
-  .brand-section {
-    padding-left: 10px;
-  }
-  
   .content-wrapper {
-    grid-template-columns: minmax(340px, 1fr) 490px;
-    gap: 20px;
-    padding: 0 20px;
+    max-width: 920px;
+    grid-template-columns: minmax(320px, 1fr) 440px;
+    gap: 18px;
+    padding: 0 16px;
   }
 
   .login-card {
-    max-width: 490px;
-    padding: 32px 28px 26px 28px;
+    max-width: 440px;
   }
 }
 
 @media (max-width: 991px) {
   body.login-page {
-    background-position: 25% bottom;
+    background-position: center bottom;
+    background-attachment: scroll;
   }
 
   .site-header {
@@ -856,103 +910,151 @@ body.login-page {
   }
 
   .logo-img {
-    height: 32px;
+    height: 30px;
   }
 
-  .logo-mib { height: 32px; }
-  .logo-iffi { height: 34px; }
-  .logo-pib { height: 30px; }
-  .logo-nfdc { height: 26px; }
-  .logo-esg { height: 30px; }
+  .logo-mib { height: 30px; }
+  .logo-iffi { height: 32px; }
+  .logo-pib { height: 28px; }
+  .logo-nfdc { height: 24px; }
+  .logo-esg { height: 28px; }
 
   .logos-group {
-    gap: 14px;
+    gap: 12px;
   }
 
   .nav-divider {
-    height: 20px;
+    height: 18px;
   }
 
   .menu-btn {
-    padding: 6px 16px;
-    font-size: 0.85rem;
+    padding: 6px 14px;
+    font-size: 0.82rem;
   }
 
   .main-content {
-    padding: 24px 0 40px 0;
+    padding: 12px 0 20px 0;
+    min-height: auto;
   }
 
-  /* Show peacock art as an artistic decorative backdrop on tablet/mobile */
+  /* Mobile watermark peacock art */
   .mobile-peacock-art {
-    display: block;
-    position: absolute;
-    top: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 320px;
-    opacity: 0.12;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .mobile-peacock-img {
-    width: 100%;
-    height: auto;
+    display: none;
   }
 
   .content-wrapper {
     grid-template-columns: 1fr;
-    max-width: 540px;
-    gap: 28px;
+    max-width: 480px;
+    gap: 12px;
     padding: 0 16px;
   }
 
   .brand-section {
     padding-left: 0;
+    width: 100%;
+  }
+
+  /* Sleek, lightweight brand header banner on mobile */
+  .brand-showcase-card {
+    max-width: 100%;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    padding: 4px 6px 0 6px;
     text-align: center;
-    align-items: center;
+  }
+
+  .brand-showcase-card::before {
+    display: none;
+  }
+
+  .brand-showcase-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .brand-badge {
+    margin: 0 auto 6px auto;
+    font-size: 0.72rem;
+    padding: 3px 10px;
+  }
+
+  .brand-header-block {
+    margin-bottom: 6px;
   }
 
   .showcase-title {
-    font-size: 2rem;
+    font-size: 1.45rem;
+    line-height: 1.16;
+    margin-bottom: 4px;
+  }
+
+  .showcase-theme {
+    font-size: 0.78rem;
+    letter-spacing: 1.2px;
+    justify-content: center;
+    margin-bottom: 6px;
   }
 
   .event-meta-list {
-    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+
+  .meta-item {
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(203, 213, 225, 0.6);
+  }
+
+  .meta-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+  }
+
+  .meta-text {
+    font-size: 0.78rem;
+  }
+
+  /* Hide verbose About text block on mobile to keep login primary */
+  .about-iffi-card {
+    display: none;
   }
 
   .login-card-section {
     align-items: center;
+    width: 100%;
   }
 
   .login-card {
     max-width: 100%;
-    padding: 32px 24px 28px;
-  }
-
-  .about-iffi-card {
-    max-width: 100%;
-    text-align: left;
+    padding: 20px 18px 16px 18px;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(12, 35, 64, 0.08);
   }
 }
 
 @media (max-width: 576px) {
   .header-container {
-    padding: 0 12px;
+    padding: 0 10px;
   }
 
   .logo-img {
-    height: 26px;
+    height: 24px;
   }
 
-  .logo-mib { height: 26px; }
-  .logo-iffi { height: 28px; }
-  .logo-pib { height: 24px; }
-  .logo-nfdc { height: 20px; }
-  .logo-esg { height: 24px; }
+  .logo-mib { height: 24px; }
+  .logo-iffi { height: 26px; }
+  .logo-pib { height: 22px; }
+  .logo-nfdc { height: 18px; }
+  .logo-esg { height: 22px; }
 
   .logos-group {
-    gap: 10px;
+    gap: 8px;
   }
 
   .nav-divider {
@@ -960,8 +1062,8 @@ body.login-page {
   }
 
   .menu-btn {
-    padding: 6px 12px;
-    font-size: 0.8rem;
+    padding: 5px 10px;
+    font-size: 0.78rem;
   }
 
   .menu-btn span {
@@ -969,48 +1071,185 @@ body.login-page {
   }
 
   .showcase-title {
-    font-size: 1.65rem;
+    font-size: 1.32rem;
   }
 
   .showcase-theme {
-    font-size: 0.88rem;
-    letter-spacing: 1.5px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+
+  .event-meta-list {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .meta-item {
+    padding: 3px 8px;
+  }
+
+  .meta-text {
+    font-size: 0.75rem;
   }
 
   .login-card {
-    padding: 24px 18px 20px;
-    border-radius: 20px;
+    padding: 18px 16px 14px 16px;
+    border-radius: 16px;
+  }
+
+  .form-header {
+    margin-bottom: 10px;
   }
 
   .form-title {
-    font-size: 1.5rem;
+    font-size: 1.38rem;
+  }
+
+  .form-subtitle {
+    font-size: 0.76rem;
+  }
+
+  .auth-tabs-nav {
+    margin-bottom: 12px;
+    gap: 8px;
   }
 
   .auth-tab-btn {
-    padding: 8px 10px;
+    height: 38px;
+    padding: 6px 8px;
     font-size: 0.8rem;
+    gap: 4px;
+  }
+
+  .form-group-custom {
+    margin-bottom: 10px;
+  }
+
+  .form-label-custom {
+    font-size: 0.78rem;
+    margin-bottom: 3px;
+  }
+
+  .input-control-custom {
+    height: 42px;
+    font-size: 0.88rem;
+    padding: 8px 12px 8px 38px;
+  }
+
+  .input-icon-prefix {
+    left: 12px;
+    font-size: 0.92rem;
+  }
+
+  .btn-primary-action {
+    height: 42px;
+    font-size: 0.92rem;
   }
 
   .otp-digit {
-    width: 36px;
-    height: 42px;
-    font-size: 1.1rem;
+    width: 34px;
+    height: 38px;
+    font-size: 1.05rem;
   }
 
   .footer-container {
-    padding: 0 16px;
+    padding: 0 12px;
     flex-direction: column;
     text-align: center;
-    gap: 8px;
+    gap: 6px;
+  }
+
+  .footer-copyright {
+    font-size: 0.76rem;
   }
 
   .footer-links {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
+    font-size: 0.76rem;
   }
 
   .footer-divider {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Viewport Height Responsiveness (Laptops & Short Screens)
+   ========================================================================== */
+@media (max-height: 800px) {
+  .site-header {
+    padding: 6px 0;
+  }
+
+  .site-footer {
+    padding: 12px 0;
+  }
+
+  .main-content {
+    padding: 8px 0 12px 0;
+  }
+
+  .login-card {
+    padding: 20px 24px 16px 24px;
+  }
+
+  .brand-showcase-card {
+    padding: 20px 24px 16px 24px;
+  }
+
+  .form-title {
+    font-size: 1.45rem;
+    margin-bottom: 2px;
+  }
+
+  .auth-tabs-nav {
+    margin-bottom: 12px;
+  }
+
+  .auth-tab-btn {
+    height: 38px;
+    font-size: 0.84rem;
+  }
+
+  .form-group-custom {
+    margin-bottom: 10px;
+  }
+
+  .input-control-custom {
+    height: 40px;
+    font-size: 0.88rem;
+  }
+
+  .btn-primary-action {
+    height: 42px;
+    font-size: 0.94rem;
+  }
+
+  .form-options-row {
+    margin-bottom: 10px;
+  }
+
+  .form-footer-nav {
+    margin-top: 10px;
+  }
+
+  .showcase-title {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-height: 680px) {
+  .site-header {
+    position: relative;
+  }
+  
+  .brand-showcase-card .about-iffi-card {
+    display: none;
+  }
+
+  .support-prompt {
     display: none;
   }
 }
