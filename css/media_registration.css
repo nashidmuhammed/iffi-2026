@@ -962,3 +962,72 @@ body {
   box-shadow: 0 2px 6px rgba(22, 51, 135, 0.2);
 }
 
+/* ==========================================================================
+   Special Workshop Opportunity Card Styling
+   ========================================================================== */
+.workshop-opportunity-card {
+  background: linear-gradient(135deg, rgba(238, 242, 255, 0.95) 0%, rgba(243, 232, 255, 0.85) 100%);
+  border: 1.5px solid #c7d2fe;
+  border-left: 4px solid #6366f1;
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.06);
+}
+
+.workshop-opportunity-card:hover {
+  border-color: #818cf8;
+  box-shadow: 0 6px 22px rgba(99, 102, 241, 0.12);
+}
+
+.badge-workshop {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 6px rgba(79, 70, 229, 0.25);
+}
+
+.workshop-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  cursor: pointer;
+  margin: 0;
+  width: 100%;
+}
+
+.workshop-checkbox-label input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #4f46e5;
+  margin-top: 2px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.workshop-checkbox-content {
+  flex: 1;
+}
+
+.workshop-question-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e1b4b;
+  line-height: 1.48;
+  margin-bottom: 4px;
+}
+
+.workshop-sub-text {
+  font-size: 0.83rem;
+  color: #4338ca;
+  font-weight: 600;
+}
+

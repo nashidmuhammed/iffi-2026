@@ -256,6 +256,56 @@
                     </div>
                   </div>
 
+                  <!-- Conditional Red Carpet Event Coverage Box (Shown ONLY for Photographer / Photojournalist category) -->
+                  <div id="redcarpet-container" class="col-12" style="display: none;">
+                    <div class="guidelines-box mb-0" style="background: linear-gradient(135deg, rgba(255, 241, 242, 0.95) 0%, rgba(254, 242, 242, 0.85) 100%); border-color: #fecdd3; border-left-color: #e11d48;">
+                      
+                      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+                        <div class="d-flex align-items-center gap-2">
+                          <span class="badge" style="background: #e11d48; color: #fff; font-family: var(--font-heading); font-weight: 700; font-size: 0.82rem; padding: 5px 14px; border-radius: var(--radius-pill);">
+                            <i class="bi bi-camera-reels me-1"></i> Red Carpet Coverage
+                          </span>
+                          <span class="text-danger fw-semibold small">Opening &amp; Closing Ceremony Access</span>
+                        </div>
+                      </div>
+
+                      <div class="row g-3 align-items-center">
+                        <div class="col-md-8">
+                          <label for="redcarpet-intent" class="form-label-custom mb-1 fw-bold text-dark">
+                            Do you intend to cover the Red Carpet events of the Opening and Closing Ceremony? <span class="required-star">*</span>
+                          </label>
+                          <div class="text-muted small">Restricted option for Photographer / Photojournalist / Videographer category.</div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                          <div class="input-group-custom">
+                            <span class="input-group-text-custom"><i class="bi bi-question-circle"></i></span>
+                            <select id="redcarpet-intent" class="form-select-custom" onchange="toggleRedCarpetNominationUpload()">
+                              <option value="No" selected>No</option>
+                              <option value="Yes">Yes</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Sub-conditional File Upload (Shown ONLY when "Yes" is selected) -->
+                      <div id="redcarpet-nomination-container" class="mt-3 pt-3 border-top" style="display: none; border-color: #fecdd3 !important;">
+                        <div class="file-upload-card bg-white">
+                          <label class="form-label-custom justify-content-between" for="doc-redcarpet-nomination">
+                            <span>
+                              <i class="bi bi-file-earmark-arrow-up me-1 text-danger"></i>
+                              Red Carpet Nomination Letter from Media Organisation <span class="required-star">*</span>
+                            </span>
+                            <i class="bi bi-info-circle-fill info-icon" data-bs-toggle="tooltip" title="Upload an official nomination letter from your media organisation specifically requesting Red Carpet coverage access for the Opening & Closing Ceremonies. Format: JPG, PNG, PDF (Max 3MB)."></i>
+                          </label>
+                          <input type="file" id="doc-redcarpet-nomination" class="form-control" accept=".jpg,.jpeg,.png,.pdf" onchange="handleFileSelected(this)">
+                          <div class="file-feedback small text-muted mt-2">Upload Organisation Nomination Letter specifically for Red Carpet Coverage (.jpg, .png, .pdf up to 3MB)</div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
                   <!-- Mobile / WhatsApp Number with Country Code -->
                   <div class="col-md-6">
                     <label for="mobile-number" class="form-label-custom">
@@ -486,6 +536,16 @@
                   <span><i class="bi bi-shield-check"></i> Declarations & Terms</span>
                 </div>
 
+                <!-- Animation Workshop Interest Checkbox (Simple Box Style) -->
+                <div class="guidelines-box mb-4">
+                  <label class="custom-checkbox-styled m-0" for="agree-workshop">
+                    <input type="checkbox" id="agree-workshop" name="attend_animation_workshop" value="Yes">
+                    <span>
+                      Are you interested in attending a complimentary <strong>Animation Films Workshop</strong> to be organised by <strong>Indian Institute of Creative Technologies</strong> on <strong>19th November 2026</strong>?
+                    </span>
+                  </label>
+                </div>
+
                 <div class="mb-4">
                   <label class="custom-checkbox-styled" for="agree-policy">
                     <input type="checkbox" id="agree-policy" required>
@@ -709,14 +769,16 @@
       });
     });
 
-    // Toggle Dynamic Digital Medium Verification Questions based on Type of Media
-    function toggleDigitalMediumFields() {
+    // Toggle Dynamic Fields based on Category & Media Type
+    function toggleConditionalFields() {
       const mediaTypeSelect = document.getElementById('media-type');
       const categorySelect = document.getElementById('media-category');
       const digitalContainer = document.getElementById('digital-media-container');
       const screenshotInput = document.getElementById('doc-digital-screenshot');
       const subscribersInput = document.getElementById('digital-subscribers');
+      const redcarpetContainer = document.getElementById('redcarpet-container');
 
+      // 1. Digital Media Verification Toggle
       const isDigital = (mediaTypeSelect && mediaTypeSelect.value === 'Digital Media (Online Media)') ||
                         (categorySelect && categorySelect.value === 'Digital & Online Media / Podcaster');
 
@@ -728,6 +790,44 @@
         digitalContainer.style.display = 'none';
         if (screenshotInput) screenshotInput.removeAttribute('required');
         if (subscribersInput) subscribersInput.removeAttribute('required');
+      }
+
+      // 2. Red Carpet Coverage Question Toggle (Photographer / Photojournalist category only)
+      const isPhotographer = categorySelect && (
+        categorySelect.value === 'Photographer / Photojournalist' || 
+        categorySelect.value.toLowerCase().includes('photographer')
+      );
+
+      if (isPhotographer) {
+        redcarpetContainer.style.display = 'block';
+      } else {
+        redcarpetContainer.style.display = 'none';
+        const redcarpetIntent = document.getElementById('redcarpet-intent');
+        if (redcarpetIntent) redcarpetIntent.value = 'No';
+        toggleRedCarpetNominationUpload();
+      }
+    }
+
+    // Alias for backward compatibility
+    function toggleDigitalMediumFields() {
+      toggleConditionalFields();
+    }
+
+    // Toggle Red Carpet Nomination Upload based on Yes/No selection
+    function toggleRedCarpetNominationUpload() {
+      const intentSelect = document.getElementById('redcarpet-intent');
+      const nominationContainer = document.getElementById('redcarpet-nomination-container');
+      const nominationInput = document.getElementById('doc-redcarpet-nomination');
+
+      if (intentSelect && intentSelect.value === 'Yes') {
+        nominationContainer.style.display = 'block';
+        if (nominationInput) nominationInput.setAttribute('required', 'required');
+      } else {
+        nominationContainer.style.display = 'none';
+        if (nominationInput) {
+          nominationInput.removeAttribute('required');
+          nominationInput.value = '';
+        }
       }
     }
 
