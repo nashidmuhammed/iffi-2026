@@ -162,7 +162,7 @@
                   </div>
 
                   <!-- Designation -->
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <label for="designation" class="form-label-custom">
                       Designation / Role <span class="required-star">*</span>
                     </label>
@@ -173,7 +173,7 @@
                   </div>
 
                   <!-- Accreditation Category -->
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <label for="media-category" class="form-label-custom">
                       Accreditation Category <span class="required-star">*</span>
                     </label>
@@ -181,13 +181,29 @@
                       <span class="input-group-text-custom"><i class="bi bi-tag"></i></span>
                       <select id="media-category" class="form-select-custom" onchange="toggleDigitalMediumFields()" required>
                         <option value="" selected disabled>Select your media category</option>
-                        <option value="Correspondent (without equipment)">Correspondent / Reporter (without equipment)</option>
-                        <option value="Correspondent (with equipment)">Correspondent / Cameraperson (with equipment)</option>
-                        <option value="Photographer / Photojournalist">Photographer / Photojournalist</option>
-                        <option value="Videographer / Television Crew">Videographer / Television Crew</option>
+                        <option value="Correspondent (without equipment)">Correspondent (without equipment)</option>
+                        <option value="Correspondent (with equipment)">Correspondent (with equipment)</option>
+                        <option value="Photographer / Photojournalist">Photographer / Videographer</option>
+                        <!-- <option value="Videographer / Television Crew">Videographer / Television Crew</option>
                         <option value="Digital & Online Media / Podcaster">Digital & Online Media / Podcaster</option>
                         <option value="Freelance Film Critic / Columnist">Freelance Film Critic / Columnist</option>
-                        <option value="Official Broadcaster">Official Broadcaster / Agency</option>
+                        <option value="Official Broadcaster">Official Broadcaster / Agency</option> -->
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Type of Media -->
+                  <div class="col-md-4">
+                    <label for="media-type" class="form-label-custom">
+                      Type of Media <span class="required-star">*</span>
+                    </label>
+                    <div class="input-group-custom">
+                      <span class="input-group-text-custom"><i class="bi bi-collection-play"></i></span>
+                      <select id="media-type" class="form-select-custom" onchange="toggleDigitalMediumFields()" required>
+                        <option value="" selected disabled>Select Type of Media</option>
+                        <option value="Print Media">Print Media</option>
+                        <option value="Electronic Media (Television / Radio)">Electronic Media (Television / Radio)</option>
+                        <option value="Digital Media (Online Media)">Digital Media (Online Media)</option>
                       </select>
                     </div>
                   </div>
@@ -693,23 +709,25 @@
       });
     });
 
-    // Toggle Dynamic Digital Medium Verification Questions based on Accreditation Category
+    // Toggle Dynamic Digital Medium Verification Questions based on Type of Media
     function toggleDigitalMediumFields() {
+      const mediaTypeSelect = document.getElementById('media-type');
       const categorySelect = document.getElementById('media-category');
       const digitalContainer = document.getElementById('digital-media-container');
       const screenshotInput = document.getElementById('doc-digital-screenshot');
       const subscribersInput = document.getElementById('digital-subscribers');
 
-      const isDigitalCategory = categorySelect && categorySelect.value === 'Digital & Online Media / Podcaster';
+      const isDigital = (mediaTypeSelect && mediaTypeSelect.value === 'Digital Media (Online Media)') ||
+                        (categorySelect && categorySelect.value === 'Digital & Online Media / Podcaster');
 
-      if (isDigitalCategory) {
+      if (isDigital) {
         digitalContainer.style.display = 'block';
-        screenshotInput.setAttribute('required', 'required');
-        subscribersInput.setAttribute('required', 'required');
+        if (screenshotInput) screenshotInput.setAttribute('required', 'required');
+        if (subscribersInput) subscribersInput.setAttribute('required', 'required');
       } else {
         digitalContainer.style.display = 'none';
-        screenshotInput.removeAttribute('required');
-        subscribersInput.removeAttribute('required');
+        if (screenshotInput) screenshotInput.removeAttribute('required');
+        if (subscribersInput) subscribersInput.removeAttribute('required');
       }
     }
 
