@@ -76,8 +76,8 @@ body {
 .top-banner {
   width: 100%;
   margin-bottom: 25px;
-  background-color: var(--iffi-blue-deep);
-  box-shadow: 0 4px 20px rgba(14, 34, 92, 0.25);
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(14, 34, 92, 0.15);
   position: relative;
   z-index: 10;
 }
@@ -88,6 +88,22 @@ body {
   border-radius: 0;
   display: block;
   max-width: 100%;
+}
+
+.header-band-separator {
+  width: 100%;
+  height: 8px;
+  line-height: 0;
+  display: block;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-band-strip-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 /* ==========================================================================
@@ -202,6 +218,20 @@ body {
   position: relative;
 }
 
+/* Opening Color Band on Top of Press Release Card */
+/* .press-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background-image: url('../assets/Web Banner IFFI 2026.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 5;
+} */
+
 /* Card Header & Banner Area (Clean White Background) */
 .press-card-top-banner {
   background: #ffffff;
@@ -258,6 +288,23 @@ body {
   background: #fdf2f8;
   color: var(--iffi-spark-pink);
   border: 1px solid rgba(236, 72, 153, 0.2);
+}
+
+/* Headline Separator Color Strip (57th IFFI 2026 Theme) */
+.press-headline-separator {
+  margin-bottom: 24px;
+  line-height: 0;
+  display: block;
+}
+
+.press-separator-strip {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 7px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 /* Headline & Subtitle */
