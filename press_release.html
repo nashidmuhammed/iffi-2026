@@ -308,7 +308,7 @@
 
                 <p class="footer-eng-contact">
                   For accredited journalists, critics, bloggers, and vloggers seeking 1-on-1 interviews with filmmakers and festival juries, write to us at:<br>
-                  <a href="mailto:iffi.mediadesk@pib.gov.in"><i class="bi bi-envelope-fill me-1"></i> iffi.mediadesk@pib.gov.in</a> 
+                  <a href="mailto:iffi.mediadesk@pib.gov.in" onclick="openMediaDeskModal(event)"><i class="bi bi-envelope-fill me-1"></i> iffi.mediadesk@pib.gov.in</a> 
                   with the subject line: <strong>Take One with PIB</strong>.
                 </p>
 
@@ -468,7 +468,7 @@
         <a href="https://www.youtube.com/user/pibindia" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="YouTube">
           <i class="bi bi-youtube"></i>
         </a>
-        <a href="mailto:iffi.mediadesk@pib.gov.in" class="footer-social-btn" title="Email Media Desk">
+        <a href="mailto:iffi.mediadesk@pib.gov.in" onclick="openMediaDeskModal(event)" class="footer-social-btn" title="Email Media Desk">
           <i class="bi bi-envelope-fill"></i>
         </a>
       </div>
@@ -539,7 +539,7 @@
           <a href="#venue" onclick="alert('IFFI 2026 Venues: INOX Panjim, Macquinez Palace, Dr SPM Stadium, ESG Complex')"><i class="bi bi-geo-alt"></i> Venue & Map</a>
         </li>
         <li class="offcanvas-nav-item">
-          <a href="mailto:iffi.mediadesk@pib.gov.in"><i class="bi bi-telephone"></i> PIB Media Desk Help</a>
+          <a href="mailto:iffi.mediadesk@pib.gov.in" onclick="openMediaDeskModal(event)"><i class="bi bi-headset"></i> PIB Media Desk Help</a>
         </li>
       </ul>
 
@@ -549,6 +549,59 @@
           <img src="assets/logos/MIB.png" alt="MIB" style="height: 26px;">
           <img src="assets/logos/GovtGoa.png" alt="Govt Goa" style="height: 26px;">
           <img src="assets/logos/pib-logo.png" alt="PIB" style="height: 26px;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       PIB Media Desk Contact & Webmail Modal (Fallback for Windows/Chrome)
+       ========================================================================= -->
+  <div class="modal fade" id="mediaDeskModal" tabindex="-1" aria-labelledby="mediaDeskModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content shadow border-0" style="border-radius: 16px; overflow: hidden;">
+        <div class="modal-header text-white" style="background: linear-gradient(135deg, #0e225c 0%, #163387 100%);">
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-headset fs-4 text-warning"></i>
+            <div>
+              <h5 class="modal-title fw-bold mb-0" id="mediaDeskModalLabel">PIB Media Desk Support</h5>
+              <small class="text-white-50">57th IFFI 2026 Press &amp; Media Coordination</small>
+            </div>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 text-center">
+          <p class="text-muted small mb-3">
+            For press accreditation, interview coordination, or festival queries, reach out to our official desk:
+          </p>
+          
+          <div class="p-3 bg-light rounded-3 d-flex align-items-center justify-content-between mb-3 border">
+            <div class="text-start">
+              <span class="text-secondary small d-block">Official Email:</span>
+              <span class="fw-bold text-dark font-monospace user-select-all" id="modalEmailAddress">iffi.mediadesk@pib.gov.in</span>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-primary" onclick="copyMediaEmail(this)" title="Copy email address">
+              <i class="bi bi-clipboard"></i> Copy
+            </button>
+          </div>
+
+          <div class="d-grid gap-2">
+            <!-- Direct Gmail Compose (Guaranteed to work in Windows Chrome) -->
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=iffi.mediadesk@pib.gov.in&su=57th%20IFFI%202026%20Query%20-%20PIB%20Media%20Desk" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger d-flex align-items-center justify-content-center gap-2 py-2">
+              <i class="bi bi-google"></i> Compose in Gmail Web
+            </a>
+            <!-- Direct Outlook Web Compose -->
+            <a href="https://outlook.live.com/mail/0/deeplink/compose?to=iffi.mediadesk@pib.gov.in&subject=57th%20IFFI%202026%20Query%20-%20PIB%20Media%20Desk" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2 py-2">
+              <i class="bi bi-microsoft"></i> Compose in Outlook Web
+            </a>
+            <!-- Default Mail Client (mailto:) -->
+            <a href="mailto:iffi.mediadesk@pib.gov.in?subject=57th%20IFFI%202026%20Query%20-%20PIB%20Media%20Desk" class="btn btn-primary d-flex align-items-center justify-content-center gap-2 py-2" style="background: #0e225c; border-color: #0e225c;">
+              <i class="bi bi-envelope-fill"></i> Open in Default Mail App
+            </a>
+          </div>
+        </div>
+        <div class="modal-footer bg-light py-2 justify-content-center border-0">
+          <small class="text-muted"><i class="bi bi-shield-check text-success"></i> Official Press Information Bureau (PIB) Helpdesk</small>
         </div>
       </div>
     </div>
@@ -659,6 +712,45 @@
           toast.classList.remove('show');
         }, 2500);
       }
+    }
+
+    // --- PIB Media Desk Support Modal & Email Fallback ---
+    function openMediaDeskModal(event) {
+      if (event) event.preventDefault();
+      
+      // Close offcanvas drawer if open
+      const offcanvasEl = document.getElementById('iffiMenuOffcanvas');
+      if (offcanvasEl) {
+        const offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvasEl);
+        if (offcanvasInstance) {
+          offcanvasInstance.hide();
+        }
+      }
+
+      // Show the media desk helper modal
+      const modalEl = document.getElementById('mediaDeskModal');
+      if (modalEl) {
+        const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+        modal.show();
+      }
+    }
+
+    function copyMediaEmail(btn) {
+      const email = 'iffi.mediadesk@pib.gov.in';
+      navigator.clipboard.writeText(email).then(() => {
+        showToast(`Email copied: ${email}`);
+        if (btn) {
+          const originalHTML = btn.innerHTML;
+          btn.innerHTML = '<i class="bi bi-check2"></i> Copied!';
+          btn.classList.replace('btn-outline-primary', 'btn-success');
+          setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.classList.replace('btn-success', 'btn-outline-primary');
+          }, 2000);
+        }
+      }).catch(() => {
+        showToast(`Email: ${email}`);
+      });
     }
   </script>
 </body>
